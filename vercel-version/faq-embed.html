@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Super Smiles — FAQ (embeddable)</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ====== Super Smiles FAQ accordion — self-contained, drop-in ======
+     Click a question to expand/collapse. The panel slides open via
+     max-height; the + icon rotates 45deg into an x and fills purple. */
+  .ss-faq{
+    --ink:#171717;
+    --gray-600:#4d4d4d;
+    --gray-100:#ebebeb;
+    --brand:#8C52FF;
+    --ring:rgba(0,0,0,0.08) 0 0 0 1px;      /* shadow-as-border */
+    font-family:"Geist",-apple-system,Arial,sans-serif;
+    max-width:780px;margin:0 auto;color:var(--ink);
+  }
+
+  .ss-faq * { box-sizing:border-box; }
+
+  .ss-faq-item{ border-bottom:1px solid var(--gray-100); }
+
+  /* clickable question row */
+  .ss-faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    text-align:left;padding:22px 4px;font-size:17px;font-weight:600;letter-spacing:-0.015em;
+    color:var(--ink);background:none;border:none;cursor:pointer;font-family:inherit;
+  }
+
+  /* +/x icon */
+  .ss-faq-q .ss-pm{
+    flex:none;width:26px;height:26px;border-radius:7px;box-shadow:var(--ring);
+    display:grid;place-items:center;color:var(--brand);
+    transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .ss-faq-q .ss-pm svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+  /* OPEN state */
+  .ss-faq-item.open .ss-pm{ background:var(--brand);color:#fff;box-shadow:none;transform:rotate(45deg); }
+
+  /* answer panel (animated) */
+  .ss-faq-a{ max-height:0;overflow:hidden;transition:max-height .3s ease; }
+  .ss-faq-a p{ font-size:15px;color:var(--gray-600);line-height:1.65;padding:0 4px 22px;margin:0; }
+  .ss-faq-a a{ color:var(--brand);font-weight:500; }
+
+  .ss-faq button:focus-visible{ outline:2px solid hsla(212,100%,48%,1);outline-offset:2px;border-radius:4px; }
+</style>
+</head>
+<body>
+
+<div class="ss-faq">
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">Is this legal?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>Yes. Compassionate Release of Super is a genuine program run by the ATO. It lets people access their super early for specific medical and dental needs. We simply help you apply correctly — we don't bend any rules.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">What if this is a scam?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>It's smart to be cautious. We're fully transparent, and you'll see proof at every step. No pressure — just facts. If anyone ever asks you to pay for treatment upfront, that's a red flag, and it's not how we work.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">I can't afford to waste what little I've got.<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>And you shouldn't. That's exactly why the eligibility check is free and every step is clear and legal. If it's not right for you, we'll tell you — we won't waste your time or your hope.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">What if it doesn't work for me?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>That's why we start with a free check. Eligibility is ultimately decided by the ATO and your super fund, so we never guarantee approval — but we'll give you an honest read before you commit to anything, and there's no fee unless your super is released.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">I've been burned before.<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>That makes complete sense. So we show you exactly how it works — the ATO scheme, the documents, the timeline — backed by a clear process rather than hype. You stay in control the whole way.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">What does it cost?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>The eligibility check and consultation are free. Our service fee is $600 for every $10,000 successfully released from your super. There are no upfront charges, and no fee at all if your release doesn't go ahead — no approval, no fee.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">Will I be taxed on the money?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>Yes — early super withdrawals are taxed (commonly around 17–22%, depending on your age and circumstances) and they do reduce your retirement savings. We'll be upfront about the numbers so there are no surprises. We help with the application; we don't give personal financial or tax advice.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">How long does it take?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>For a complete application, the ATO assessment can take up to around 14 days, and your super fund typically releases the funds about 5–10 business days after approval. We can't guarantee exact timeframes, but a properly prepared application avoids the common delays.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">Which treatments qualify?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>When medically necessary: implants, crowns, root canals, extractions, oral surgery and reconstructive work often qualify. Purely cosmetic work — like whitening or cosmetic veneers — generally doesn't, unless there's a genuine medical purpose such as restoring function after trauma.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">Can I do this for my child or partner?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>Often, yes. You can apply to release your super for a dependent's treatment with evidence of the relationship and the condition. The free check is the easiest way to confirm your situation.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">Do I have to change dentists?<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>No. You can keep your own dentist — we'll liaise with them to get the right quote — or we can connect you with a super-approved clinic. Either way works.</p></div>
+  </div>
+
+  <div class="ss-faq-item">
+    <button class="ss-faq-q" onclick="ssToggleFaq(this)">I don't have time / I need to check with my partner.<span class="ss-pm"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></button>
+    <div class="ss-faq-a"><p>Totally fair. The first step takes about 20–30 minutes and can buy back a lot of peace of mind. And we'll give you a short, plain explainer you can share for that conversation at home.</p></div>
+  </div>
+</div>
+
+<script>
+  function ssToggleFaq(btn){
+    var item  = btn.parentElement;                 // .ss-faq-item
+    var panel = item.querySelector('.ss-faq-a');   // answer panel
+    var open  = item.classList.toggle('open');      // flip state -> drives +/x rotation
+    panel.style.maxHeight = open ? panel.scrollHeight + 'px' : 0;  // slide open/closed
+  }
+  // keep open panels correctly sized if the window is resized
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.ss-faq-item.open .ss-faq-a').forEach(function(p){
+      p.style.maxHeight = p.scrollHeight + 'px';
+    });
+  });
+</script>
+</body>
+</html>

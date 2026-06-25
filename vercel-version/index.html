@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Super Smiles — Use your super for dental, the easy way</title>
+<meta name="description" content="Super Smiles helps everyday Australians legally access their super early through the ATO's Compassionate Release of Super program to pay for urgent dental treatment. Free 60-second eligibility check. No approval, no fee." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</a>
+    <nav class="nav-links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="find-a-dentist.html">Find a dentist</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about-us.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-ghost">Talk to a real person</a>
+      <a href="#check" class="btn btn-primary">Free 60-sec check</a>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleNav(true)"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile nav -->
+<div class="mnav" id="mnav">
+  <div class="top">
+    <span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+    <button class="close" aria-label="Close menu" onclick="toggleNav(false)"><svg class="svgi"><use href="#i-x"/></svg></button>
+  </div>
+  <a href="how-it-works.html">How it works</a>
+  <a href="eligibility.html">Eligibility</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="find-a-dentist.html">Find a dentist</a>
+  <a href="faq.html">FAQ</a>
+  <a href="about-us.html">About</a>
+  <a href="contact-us.html">Contact</a>
+  <a href="#check" class="btn btn-primary btn-lg btn-block" onclick="toggleNav(false)">Start free 60-sec check</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="check">
+  <div class="wrap hero-grid">
+
+    <!-- LEFT: photo -->
+    <div class="photo-col reveal">
+      <div class="photo-frame">
+        <img
+          src="https://images.unsplash.com/photo-1542178243-bc20204b769f?auto=format&fit=crop&w=900&q=80"
+          alt="An everyday Australian smiling with relief"
+          loading="eager"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="photo-fallback" style="display:none">
+          <svg class="svgi" style="width:46px;height:46px;stroke:#fff"><use href="#i-smile"/></svg>
+          <div style="font-weight:600;letter-spacing:-0.02em">Your super. Your smile.</div>
+          <small>[ replace with a real client photo ]</small>
+        </div>
+      </div>
+      <div class="float-card float-tl">
+        <div class="ic" style="background:var(--brand-soft);color:var(--brand)"><svg class="svgi"><use href="#i-landmark"/></svg></div>
+        <div><div class="t">ATO-recognised</div><div class="s">Compassionate Release of Super</div></div>
+      </div>
+      <div class="float-card float-br">
+        <div class="ic" style="background:var(--brand-soft);color:var(--brand)"><svg class="svgi"><use href="#i-check"/></svg></div>
+        <div><div class="t">No approval, no fee</div><div class="s">Free check &amp; no upfront charge</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: copy + interactive checker -->
+    <div class="hero-copy reveal">
+      <span class="badge"><span class="dot"></span> Australia-wide · We do the paperwork</span>
+      <h1 class="h1">Need dental work but can't afford it? You may be able to use <em>your super</em>.</h1>
+      <p class="lede hero-sub">It's a legal ATO program called Compassionate Release of Super. We handle the whole application — the GP letter, the quote, the forms — so you don't have to. No judgment. You're not alone.</p>
+
+      <!-- interactive eligibility checker -->
+      <div class="checker" id="checker">
+        <div class="checker-head">
+          <span class="lbl"><span class="pulse"></span> Free eligibility check</span>
+          <span class="time">~60 seconds · no obligation</span>
+        </div>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <div class="checker-body" id="checkerBody">
+
+          <div class="step active" data-step="0">
+            <div class="qnum">Question 1 of 4</div>
+            <div class="q">What kind of dental work do you need?</div>
+            <div class="q-help">Pick the closest one — there are no wrong answers.</div>
+            <div class="opts">
+              <button class="opt" onclick="answer(0,this)"><span class="k">A</span> Pain relief, extractions or fillings</button>
+              <button class="opt" onclick="answer(0,this)"><span class="k">B</span> Implants, crowns or a root canal</button>
+              <button class="opt" onclick="answer(0,this)"><span class="k">C</span> Oral surgery or reconstructive work</button>
+              <button class="opt" onclick="answer(0,this)"><span class="k">D</span> I'm honestly not sure yet</button>
+            </div>
+          </div>
+
+          <div class="step" data-step="1">
+            <div class="qnum">Question 2 of 4</div>
+            <div class="q">Are you in pain, or has a dentist said you need this work?</div>
+            <div class="q-help">The ATO looks for treatment that's medically necessary.</div>
+            <div class="opts">
+              <button class="opt" onclick="answer(1,this)"><span class="k">A</span> Yes — I'm in pain or discomfort</button>
+              <button class="opt" onclick="answer(1,this)"><span class="k">B</span> Yes — a dentist told me I need it</button>
+              <button class="opt" onclick="answer(1,this)"><span class="k">C</span> Not yet, but I think something's wrong</button>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="qnum">Question 3 of 4</div>
+            <div class="q">Do you have super you haven't touched yet?</div>
+            <div class="q-help">Even a modest balance can be enough.</div>
+            <div class="opts">
+              <button class="opt" onclick="answer(2,this)"><span class="k">A</span> Yes</button>
+              <button class="opt" onclick="answer(2,this)"><span class="k">B</span> I think so, but I'm not certain</button>
+              <button class="opt" onclick="answer(2,this)"><span class="k">C</span> No / I'm not sure I have any</button>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="qnum">Question 4 of 4</div>
+            <div class="q">Is paying out of pocket realistic right now?</div>
+            <div class="q-help">This program exists specifically for people in a tight spot — there's no shame in it.</div>
+            <div class="opts">
+              <button class="opt" onclick="answer(3,this)"><span class="k">A</span> No — not without real strain</button>
+              <button class="opt" onclick="answer(3,this)"><span class="k">B</span> Maybe, but it would hurt</button>
+              <button class="opt" onclick="answer(3,this)"><span class="k">C</span> Yes, I could manage it</button>
+            </div>
+          </div>
+
+          <!-- result -->
+          <div class="step" data-step="4">
+            <div class="result">
+              <div class="tick"><svg><use href="#i-check"/></svg></div>
+              <h3 id="resTitle">You're likely a good fit for a free check.</h3>
+              <p id="resBody">Based on your answers, it's worth having us confirm your eligibility properly — for free, with no obligation. Pop in a contact and a real person (not a bot) will walk you through the next step.</p>
+              <input class="field" id="resName" placeholder="First name" autocomplete="given-name" />
+              <input class="field" id="resContact" placeholder="Email or mobile" autocomplete="email" />
+              <div class="row">
+                <button class="btn btn-primary btn-lg" onclick="submitCheck()">Get my free eligibility check</button>
+              </div>
+              <div class="disclaim">Eligibility is decided by the ATO and your super fund — we can't guarantee approval, but we'll tell you honestly if it's not for you. We never ask you to pay for treatment upfront.</div>
+            </div>
+          </div>
+
+          <div class="checker-foot">
+            <button class="back" id="backBtn" style="visibility:hidden" onclick="back()">← Back</button>
+            <span class="privacy"><svg class="svgi-sm" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.75"><use href="#i-lock"/></svg> Private · we won't share your details</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item"><div class="ic"><svg class="svgi"><use href="#i-landmark"/></svg></div><div><div class="t">A legal ATO program</div><div class="s">Compassionate Release of Super, named up front</div></div></div>
+      <div class="trust-item"><div class="ic"><svg class="svgi"><use href="#i-shield"/></svg></div><div><div class="t">No approval, no fee</div><div class="s">Free eligibility check, no upfront charge</div></div></div>
+      <div class="trust-item"><div class="ic"><svg class="svgi"><use href="#i-card"/></svg></div><div><div class="t">No treatment paid upfront</div><div class="s">Funds are released to you, then you pay the clinic</div></div></div>
+      <div class="trust-item"><div class="ic"><svg class="svgi"><use href="#i-pin"/></svg></div><div><div class="t">Australia-wide, dental-only</div><div class="s">It's all we do — so we do it properly</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT COSTS / CALCULATOR ============ -->
+<section class="section" id="cost" style="background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)">
+  <div class="wrap price-wrap">
+    <div class="reveal">
+      <span class="eyebrow">What it costs</span>
+      <h2 class="h2" style="margin:12px 0 14px">Transparent, success-based pricing.</h2>
+      <p class="lede">No hidden fees. No upfront charges. You only pay if your super is actually released — and the first step costs nothing.</p>
+      <ul class="price-points">
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> <span><b>Free</b> eligibility check and consultation.</span></li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> <span><b>$600</b> for every <b>$10,000</b> successfully released from your super.</span></li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> <span>Nothing to pay if it doesn't go ahead — <b>no approval, no fee</b>.</span></li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> <span>Funds are released <b>to you</b>; you pay the clinic directly.</span></li>
+      </ul>
+    </div>
+    <div class="calc reveal">
+      <div class="row1">
+        <label for="rng">Amount released from super</label>
+        <span class="amt" id="rngAmt">$10,000</span>
+      </div>
+      <input type="range" class="slider" id="rng" min="3000" max="40000" step="1000" value="10000" oninput="calc()" />
+      <div class="calc-out">
+        <div class="box hl"><div class="lbl">Our service fee</div><div class="v" id="fee">$600</div></div>
+        <div class="box"><div class="lbl">Est. tax withheld*</div><div class="v" id="tax">$2,000</div></div>
+      </div>
+      <p class="calc-note">*Illustration only. Early super withdrawals are taxed (≈17–22% depending on your circumstances) and reduce your retirement savings. This is not financial or tax advice — final figures are confirmed by the ATO and your super fund.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IS THIS SAFE ============ -->
+<section class="section safe" id="safe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Is this safe?</span>
+      <h2 class="h2">It's smart to be cautious. Here's the honest version.</h2>
+      <p class="lede">You've probably heard warnings about "dodgy super dental offers." Good — that scepticism protects you. We'd rather agree with the regulator than hide in the fine print.</p>
+    </div>
+    <div class="safe-grid">
+      <div class="safe-card reveal"><div class="q"><span>Q.</span> Is this even legal?</div><p>Yes. Compassionate Release of Super is a genuine program run by the ATO. It lets people access super early for specific medical and dental needs. We help you apply correctly — we don't bend any rules.</p></div>
+      <div class="safe-card reveal"><div class="q"><span>Q.</span> Will I get judged?</div><p>No. This scheme exists precisely for people who can't pay another way. We've helped people in exactly your situation. No lectures, no pity — just a clear path and real people.</p></div>
+      <div class="safe-card reveal"><div class="q"><span>Q.</span> What's the catch on cost?</div><p>The eligibility check is free, and there's no fee unless your super is successfully released. We never ask you to pay for your treatment upfront. You'll see every step.</p></div>
+    </div>
+    <div class="safe-foot reveal">
+      <p>Early withdrawals are taxed (commonly around 17–22%, depending on your age and circumstances) and reduce your retirement savings. We'll always be upfront about that before you commit.</p>
+      <a class="link" href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/compassionate-release-of-super" target="_blank" rel="noopener">Read the ATO's rules →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Done-for-you</span>
+      <h2 class="h2">Four steps. We do the hard parts.</h2>
+      <p class="lede" style="margin:0 auto">You're the hero here — we're just the guide who handles the paperwork nightmare so you don't have to.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card reveal"><div class="n"></div><h3>Free eligibility check</h3><p>A quick, plain-English chat about your dental needs. We tell you honestly if it's worth pursuing.</p><span class="free">Free · no obligation</span></div>
+      <div class="step-card reveal"><div class="n"></div><h3>The GP letter</h3><p>We arrange the medical letter confirming the treatment is necessary — so you're not chasing it alone.</p><span class="free">We coordinate it</span></div>
+      <div class="step-card reveal"><div class="n"></div><h3>An itemised quote</h3><p>We work with a super-approved dentist (or your own) to get a compliant, detailed dental quote.</p><span class="free">We handle the back-and-forth</span></div>
+      <div class="step-card reveal"><div class="n"></div><h3>Lodge with the ATO</h3><p>We prepare and submit the application, then support you until the funds land and you book treatment.</p><span class="free">We see it through</span></div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal"><a href="how-it-works.html" class="btn btn-ghost btn-lg">See the full process <svg class="svgi-sm"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ ELIGIBILITY DETAIL ============ -->
+<section class="section elig" id="eligibility">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:44px">
+      <span class="eyebrow">Eligibility, in plain English</span>
+      <h2 class="h2">You may be eligible if…</h2>
+    </div>
+    <div class="elig-grid">
+      <ul class="check-list reveal">
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> You've been told you need major dental work.</li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> You're in dental pain, discomfort or distress.</li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> You (or a dependent) have no other way to pay.</li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> You have some funds in your super.</li>
+        <li><span class="c"><svg><use href="#i-check"/></svg></span> You can get a GP letter and an itemised dental quote — we help with both.</li>
+      </ul>
+      <div class="tx-cols">
+        <div class="tx yes reveal">
+          <h4><svg><use href="#i-check"/></svg> Often qualifies (when medically necessary)</h4>
+          <div class="tags">
+            <span class="tag">Implants</span><span class="tag">Crowns</span><span class="tag">Root canals</span>
+            <span class="tag">Extractions</span><span class="tag">Oral surgery</span><span class="tag">Reconstructive work</span>
+          </div>
+        </div>
+        <div class="tx no reveal">
+          <h4><svg><use href="#i-x"/></svg> Usually doesn't qualify</h4>
+          <div class="tags">
+            <span class="tag">Whitening</span><span class="tag">Veneers (cosmetic)</span><span class="tag">Purely cosmetic work</span>
+          </div>
+          <p style="font-size:12.5px;color:var(--gray-500);margin-top:12px;line-height:1.5">…unless there's a genuine medical purpose, e.g. restoring function after trauma.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:36px" class="reveal"><a href="eligibility.html" class="btn btn-primary btn-lg">Check eligibility in detail <svg class="svgi-sm" style="stroke:#fff"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ PROOF BAND ============ -->
+<section class="section" id="proof">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">What to expect</span>
+      <h2 class="h2">Clear timelines, no surprises.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card reveal"><div class="big">~14</div><div class="lbl">days for the ATO to assess a complete application</div></div>
+      <div class="proof-card reveal"><div class="big">5–10</div><div class="lbl">business days for your fund to release after approval</div></div>
+      <div class="proof-card reveal"><div class="big">1</div><div class="lbl">dedicated case manager, with you the whole way</div></div>
+    </div>
+    <!-- PLACEHOLDER: real client testimonials / reviews go here once collected (none fabricated). -->
+    <p class="muted reveal" style="text-align:center;margin-top:28px;font-size:13.5px">Real client stories and reviews are published here as they're collected — we don't invent them.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" style="background:var(--gray-50);border-top:1px solid var(--gray-100)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Straight answers</span>
+      <h2 class="h2">The questions everyone asks.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if this is a scam?<span class="pm"><svg class="svgi-sm"><use href="#i-plus"/></svg></span></button><div class="faq-a"><p>It's smart to be cautious. Compassionate Release of Super is a real ATO program, we're fully transparent, and you'll see proof at every step. No pressure — just facts. If anyone ever asks you to pay for treatment upfront, that's a red flag, and it's not how we work.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">I can't afford to waste what little I've got.<span class="pm"><svg class="svgi-sm"><use href="#i-plus"/></svg></span></button><div class="faq-a"><p>And you shouldn't. That's exactly why the eligibility check is free and every step is clear and legal. If it's not right for you, we'll tell you — we won't waste your time or your hope.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if it doesn't work for me?<span class="pm"><svg class="svgi-sm"><use href="#i-plus"/></svg></span></button><div class="faq-a"><p>That's why we start with a free check. Eligibility is ultimately decided by the ATO and your super fund, so we never guarantee approval — but we'll give you an honest read before you commit to anything, and there's no fee unless your super is released.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Will I be taxed on the money?<span class="pm"><svg class="svgi-sm"><use href="#i-plus"/></svg></span></button><div class="faq-a"><p>Yes — early super withdrawals are taxed (commonly around 17–22%, depending on your age and circumstances) and they do reduce your retirement savings. We'll be upfront about the numbers so there are no surprises. We help with the application; we don't give personal financial or tax advice.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal"><a href="faq.html" class="btn btn-ghost btn-lg">Read all FAQs <svg class="svgi-sm"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section final" id="contact">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <h2 class="h2">Your super. Your smile. Our support.</h2>
+      <p>Take the free, no-risk first step. Check your eligibility in about a minute, or talk it through with a real person — whatever feels right.</p>
+      <div class="row">
+        <a href="#check" class="btn btn-primary btn-lg">Start my free 60-sec check</a>
+        <a href="#" class="btn btn-ghost btn-lg" onclick="liveChat(event)"><svg class="svgi-sm" style="stroke:#fff"><use href="#i-message"/></svg> Chat with Sierra</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+        <p>Helping everyday Australians legally access their super early — through the ATO's Compassionate Release of Super program — to pay for urgent dental treatment.</p>
+        <a href="#check" class="btn btn-primary">Free 60-sec check</a>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="how-it-works.html">How it works</a>
+        <a href="eligibility.html">Eligibility</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about-us.html">About us</a>
+        <a href="find-a-dentist.html">Find a dentist</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/compassionate-release-of-super" target="_blank" rel="noopener">ATO: CRS info ↗</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="https://instagram.com/supersmiles.au" target="_blank" rel="noopener">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="https://tiktok.com/@supersmiles.au" target="_blank" rel="noopener">TikTok</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="foot-disclaim">
+      <p><strong>Important:</strong> Super Smiles helps you prepare and lodge a Compassionate Release of Super application. Eligibility is decided by the ATO and your super fund — we cannot guarantee approval or specific timeframes. Early access to super is taxed and reduces your retirement savings. We help process your application and do <em>not</em> provide personal financial or tax advice. Please consider the ATO's guidance and seek independent advice if you're unsure.</p>
+      <p class="ph">Placeholders to confirm before publishing: phone number · email · business address · ABN &amp; any licence details · founder/team bios · named super-approved dentists · real client testimonials. (Not fabricated.)</p>
+      <div class="foot-bottom">
+        <span>© <span id="yr"></span> Super Smiles · supersmiles.au · Australia only</span>
+        <span>Terms · Privacy · Disclaimer · Legal Notices</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="mobile-bar">
+  <a href="contact-us.html" class="btn btn-ghost btn-block">Talk to us</a>
+  <a href="#check" class="btn btn-primary btn-block">Free 60-sec check</a>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

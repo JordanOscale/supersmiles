@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find a dentist — Super Smiles</title>
+<meta name="description" content="Use a super-approved dentist from our network, or bring your own. Either way, we coordinate the compliant itemised quote your application needs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</a>
+    <nav class="nav-links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="find-a-dentist.html" class="active">Find a dentist</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about-us.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-ghost">Talk to a real person</a>
+      <a href="index.html#check" class="btn btn-primary">Free 60-sec check</a>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleNav(true)"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <div class="top"><span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+    <button class="close" aria-label="Close menu" onclick="toggleNav(false)"><svg class="svgi"><use href="#i-x"/></svg></button></div>
+  <a href="how-it-works.html">How it works</a><a href="eligibility.html">Eligibility</a><a href="pricing.html">Pricing</a>
+  <a href="find-a-dentist.html">Find a dentist</a><a href="faq.html">FAQ</a><a href="about-us.html">About</a><a href="contact-us.html">Contact</a>
+  <a href="index.html#check" class="btn btn-primary btn-lg btn-block" onclick="toggleNav(false)">Start free 60-sec check</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> / Find a dentist</div>
+    <h1 class="h1 reveal">Your dentist, or one of ours. Either works.</h1>
+    <p class="lede reveal">You don't need to switch dentists to use your super. Bring your own and we'll liaise with them, or we'll connect you to a super-approved clinic. Either way, we handle the compliant itemised quote.</p>
+    <div class="row reveal">
+      <a href="index.html#check" class="btn btn-primary btn-lg">Start free 60-sec check</a>
+      <a href="contact-us.html" class="btn btn-ghost btn-lg">Ask about clinics near me</a>
+    </div>
+  </div>
+</section>
+
+<!-- two paths -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Two simple paths</span>
+      <h2 class="h2">However you'd like to do it.</h2>
+    </div>
+    <div class="two-col" style="margin-top:44px;align-items:stretch">
+      <div class="feat reveal" style="box-shadow:var(--card-3)">
+        <div class="ic"><svg class="svgi-lg"><use href="#i-route"/></svg></div>
+        <h4>Use a super-approved dentist</h4>
+        <p style="margin-bottom:14px">We connect you with a clinic that's used to compassionate-release cases, so the quote comes back right the first time.</p>
+        <ul class="price-points" style="margin-top:0">
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> Familiar with ATO requirements</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> Compliant itemised quotes, faster</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> We coordinate the back-and-forth</li>
+        </ul>
+      </div>
+      <div class="feat reveal" style="box-shadow:var(--card-3)">
+        <div class="ic"><svg class="svgi-lg"><use href="#i-heart"/></svg></div>
+        <h4>Bring your own dentist</h4>
+        <p style="margin-bottom:14px">Already have someone you trust? Keep them. We'll liaise directly with your dentist to get the quote in the right format.</p>
+        <ul class="price-points" style="margin-top:0">
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> Stay with a dentist you know</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> We talk to them, so you don't have to</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> Same support, same simple fee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- network (placeholder, clearly marked) -->
+<section class="section" style="background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our growing network</span>
+      <h2 class="h2">Super-approved clinics around Australia.</h2>
+      <p class="lede">We're building referral partnerships with clinics nationwide. Listings below are placeholders — real partner clinics appear here as they join. We don't invent them.</p>
+    </div>
+    <div class="dentist-grid">
+      <div class="dentist-card reveal"><div class="ph"><svg class="svgi-lg" style="width:34px;height:34px"><use href="#i-tooth"/></svg></div><div class="body"><span class="ph-tag">[ PLACEHOLDER CLINIC ]</span><h4>Clinic name — Suburb, State</h4><p>General &amp; restorative dentistry. Experienced with compassionate-release cases.</p><span class="chip">Super-approved</span></div></div>
+      <div class="dentist-card reveal"><div class="ph"><svg class="svgi-lg" style="width:34px;height:34px"><use href="#i-tooth"/></svg></div><div class="body"><span class="ph-tag">[ PLACEHOLDER CLINIC ]</span><h4>Clinic name — Suburb, State</h4><p>Implants, crowns &amp; oral surgery. Itemised quotes prepared correctly.</p><span class="chip">Super-approved</span></div></div>
+      <div class="dentist-card reveal"><div class="ph"><svg class="svgi-lg" style="width:34px;height:34px"><use href="#i-tooth"/></svg></div><div class="body"><span class="ph-tag">[ PLACEHOLDER CLINIC ]</span><h4>Clinic name — Suburb, State</h4><p>Family dentistry. Comfortable, judgment-free care.</p><span class="chip">Super-approved</span></div></div>
+    </div>
+    <p class="muted reveal" style="text-align:center;margin-top:28px;font-size:13.5px">Are you a clinic that wants to join the network? <a href="contact-us.html" style="color:var(--brand);font-weight:500">Get in touch →</a></p>
+  </div>
+</section>
+
+<!-- how the quote works -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The quote, sorted</span>
+      <h2 class="h2">We take the dentist admin off your plate.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal"><div class="ic"><svg class="svgi"><use href="#i-search"/></svg></div><h4>1 · Match or keep</h4><p>Pick a super-approved clinic, or tell us your dentist's details.</p></div>
+      <div class="feat reveal"><div class="ic"><svg class="svgi"><use href="#i-message"/></svg></div><h4>2 · We liaise</h4><p>We contact the clinic and request the right, itemised, ATO-compliant quote.</p></div>
+      <div class="feat reveal"><div class="ic"><svg class="svgi"><use href="#i-file"/></svg></div><h4>3 · We attach it</h4><p>The quote goes straight into your application — checked and ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section final">
+  <div class="wrap"><div class="final-card reveal">
+    <h2 class="h2">Let's find the right dentist for you.</h2>
+    <p>Start with a free check and tell us your situation — we'll handle the clinic side from there.</p>
+    <div class="row">
+      <a href="index.html#check" class="btn btn-primary btn-lg">Start my free 60-sec check</a>
+      <a href="contact-us.html" class="btn btn-ghost btn-lg">Talk to a real person</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+        <p>Helping everyday Australians legally access their super early — through the ATO's Compassionate Release of Super program — to pay for urgent dental treatment.</p>
+        <a href="index.html#check" class="btn btn-primary">Free 60-sec check</a>
+      </div>
+      <div><h5>Explore</h5><a href="how-it-works.html">How it works</a><a href="eligibility.html">Eligibility</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
+      <div><h5>Company</h5><a href="about-us.html">About us</a><a href="find-a-dentist.html">Find a dentist</a><a href="contact-us.html">Contact</a><a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/compassionate-release-of-super" target="_blank" rel="noopener">ATO: CRS info ↗</a></div>
+      <div><h5>Connect</h5><a href="https://instagram.com/supersmiles.au" target="_blank" rel="noopener">Instagram</a><a href="#">Facebook</a><a href="https://tiktok.com/@supersmiles.au" target="_blank" rel="noopener">TikTok</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-disclaim">
+      <p><strong>Important:</strong> Super Smiles helps you prepare and lodge a Compassionate Release of Super application. Eligibility is decided by the ATO and your super fund — we cannot guarantee approval or specific timeframes. Early access to super is taxed and reduces your retirement savings. We help process your application and do <em>not</em> provide personal financial or tax advice. Please consider the ATO's guidance and seek independent advice if you're unsure.</p>
+      <p class="ph">Placeholders to confirm before publishing: phone number · email · business address · ABN &amp; any licence details · founder/team bios · named super-approved dentists · real client testimonials. (Not fabricated.)</p>
+      <div class="foot-bottom"><span>© <span id="yr"></span> Super Smiles · supersmiles.au · Australia only</span><span>Terms · Privacy · Disclaimer · Legal Notices</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="contact-us.html" class="btn btn-ghost btn-block">Talk to us</a>
+  <a href="index.html#check" class="btn btn-primary btn-block">Free 60-sec check</a>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

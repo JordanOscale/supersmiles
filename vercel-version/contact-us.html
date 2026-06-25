@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact &amp; book — Super Smiles</title>
+<meta name="description" content="Book your free, no-obligation eligibility check or talk to a real person about using your super for dental treatment." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</a>
+    <nav class="nav-links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="find-a-dentist.html">Find a dentist</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about-us.html">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-ghost">Talk to a real person</a>
+      <a href="index.html#check" class="btn btn-primary">Free 60-sec check</a>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleNav(true)"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <div class="top"><span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+    <button class="close" aria-label="Close menu" onclick="toggleNav(false)"><svg class="svgi"><use href="#i-x"/></svg></button></div>
+  <a href="how-it-works.html">How it works</a><a href="eligibility.html">Eligibility</a><a href="pricing.html">Pricing</a>
+  <a href="find-a-dentist.html">Find a dentist</a><a href="faq.html">FAQ</a><a href="about-us.html">About</a><a href="contact-us.html">Contact</a>
+  <a href="index.html#check" class="btn btn-primary btn-lg btn-block" onclick="toggleNav(false)">Start free 60-sec check</a>
+</div>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> / Contact</div>
+    <h1 class="h1 reveal">Talk to a real person. No pressure, no cost.</h1>
+    <p class="lede reveal">Book your free eligibility check, ask a question, or just see if this could work for you. A real member of our team gets back to you — not a bot, not a sales script.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <!-- form -->
+    <form class="form reveal" onsubmit="return submitContact(event)">
+      <h3 class="h3" style="margin-bottom:18px">Book your free check</h3>
+      <div class="frow">
+        <div class="fgroup"><label class="flbl" for="fn">First name</label><input class="field" id="fn" placeholder="Your first name" autocomplete="given-name" required /></div>
+        <div class="fgroup"><label class="flbl" for="ln">Last name</label><input class="field" id="ln" placeholder="Your last name" autocomplete="family-name" /></div>
+      </div>
+      <div class="frow">
+        <div class="fgroup"><label class="flbl" for="em">Email</label><input class="field" id="em" type="email" placeholder="you@email.com" autocomplete="email" /></div>
+        <div class="fgroup"><label class="flbl" for="ph">Mobile</label><input class="field" id="ph" type="tel" placeholder="04xx xxx xxx" autocomplete="tel" /></div>
+      </div>
+      <div class="fgroup"><label class="flbl" for="st">State</label>
+        <select class="field" id="st">
+          <option value="">Select your state</option>
+          <option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option>
+          <option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
+        </select>
+      </div>
+      <div class="fgroup"><label class="flbl" for="msg">What's going on? (optional)</label>
+        <textarea class="field" id="msg" placeholder="A sentence or two about your dental situation — only if you'd like to share."></textarea>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Request my free eligibility check</button>
+      <p class="privacy" style="justify-content:center"><svg class="svgi-sm" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.75"><use href="#i-lock"/></svg> Private · we won't share your details · no obligation</p>
+    </form>
+
+    <!-- info -->
+    <div class="reveal">
+      <h3 class="h3" style="margin-bottom:18px">Other ways to reach us</h3>
+      <ul class="info-list">
+        <li><div class="ic"><svg class="svgi"><use href="#i-message"/></svg></div><div><div class="t">Sierra — 24/7 live chat</div><div class="s">Quick questions, any time. <a href="#" onclick="liveChat(event)" style="color:var(--brand);font-weight:500">Open chat →</a></div></div></li>
+        <li><div class="ic"><svg class="svgi"><use href="#i-phone"/></svg></div><div><div class="t">Phone</div><div class="s ph">[ phone number — to be added ]</div></div></li>
+        <li><div class="ic"><svg class="svgi"><use href="#i-mail"/></svg></div><div><div class="t">Email</div><div class="s ph">[ email address — to be added ]</div></div></li>
+        <li><div class="ic"><svg class="svgi"><use href="#i-pin"/></svg></div><div><div class="t">Service area</div><div class="s">Australia-wide. Online and over the phone — no need to visit an office.</div></div></li>
+      </ul>
+      <div class="feat" style="box-shadow:var(--card-3);margin-top:18px">
+        <div class="ic"><svg class="svgi-lg"><use href="#i-clock"/></svg></div>
+        <h4>What happens next</h4>
+        <ul class="price-points" style="margin-top:14px">
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> A real person reviews your details and reaches out.</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> We confirm eligibility — honestly — in a short, no-cost chat.</li>
+          <li><span class="c"><svg><use href="#i-check"/></svg></span> If it's a fit, we start the done-for-you process. If not, no harm done.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section final" style="padding-top:0">
+  <div class="wrap"><div class="final-card reveal">
+    <h2 class="h2">Prefer to just check first?</h2>
+    <p>Run the free 60-second eligibility check — no details needed to get started.</p>
+    <div class="row">
+      <a href="index.html#check" class="btn btn-primary btn-lg">Start my free 60-sec check</a>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"><svg><use href="#i-spark"/></svg></span> Super Smiles</span>
+        <p>Helping everyday Australians legally access their super early — through the ATO's Compassionate Release of Super program — to pay for urgent dental treatment.</p>
+        <a href="index.html#check" class="btn btn-primary">Free 60-sec check</a>
+      </div>
+      <div><h5>Explore</h5><a href="how-it-works.html">How it works</a><a href="eligibility.html">Eligibility</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
+      <div><h5>Company</h5><a href="about-us.html">About us</a><a href="find-a-dentist.html">Find a dentist</a><a href="contact-us.html">Contact</a><a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/compassionate-release-of-super" target="_blank" rel="noopener">ATO: CRS info ↗</a></div>
+      <div><h5>Connect</h5><a href="https://instagram.com/supersmiles.au" target="_blank" rel="noopener">Instagram</a><a href="#">Facebook</a><a href="https://tiktok.com/@supersmiles.au" target="_blank" rel="noopener">TikTok</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-disclaim">
+      <p><strong>Important:</strong> Super Smiles helps you prepare and lodge a Compassionate Release of Super application. Eligibility is decided by the ATO and your super fund — we cannot guarantee approval or specific timeframes. Early access to super is taxed and reduces your retirement savings. We help process your application and do <em>not</em> provide personal financial or tax advice. Please consider the ATO's guidance and seek independent advice if you're unsure.</p>
+      <p class="ph">Placeholders to confirm before publishing: phone number · email · business address · ABN &amp; any licence details · founder/team bios · named super-approved dentists · real client testimonials. (Not fabricated.)</p>
+      <div class="foot-bottom"><span>© <span id="yr"></span> Super Smiles · supersmiles.au · Australia only</span><span>Terms · Privacy · Disclaimer · Legal Notices</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="#" class="btn btn-ghost btn-block" onclick="liveChat(event)">Live chat</a>
+  <a href="index.html#check" class="btn btn-primary btn-block">Free 60-sec check</a>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

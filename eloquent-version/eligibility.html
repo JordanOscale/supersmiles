@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eligibility — Super Smiles | Am I eligible to use super for dental?</title>
+  <meta name="description" content="Take the free 60-second eligibility check and see the fee and estimated tax on a release amount. Find out whether you may qualify to access your super for dental treatment under the ATO program.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { violet:'#8C52FF', vdeep:'#6B3FD4', coral:'#FB7777', cream:'#FFF5E3',
+                ink:'#000000', night:'#0A0A0B', paper:'#FFFFFF', muted:'#6B6570', line:'#EFE9DE' },
+      fontFamily: { sans:['Outfit','ui-sans-serif','system-ui','sans-serif'], display:['Plus Jakarta Sans','Outfit','sans-serif'], mono:['Space Mono','ui-monospace','monospace'] } } } }
+  </script>
+  <style>
+    html{scroll-behavior:smooth} body{font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;color:#000}
+    h1,h2,h3,h4,h5,.font-display{font-family:'Plus Jakarta Sans','Outfit',system-ui,sans-serif}
+    ::selection{background:#8C52FF;color:#fff}
+    .label{display:inline-flex;align-items:center;gap:.55rem;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+    .label::before{content:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;border-radius:9999px;transition:all .25s cubic-bezier(.4,0,.2,1);white-space:nowrap;line-height:1}
+    .btn-primary{background:#8C52FF;color:#fff;box-shadow:0 14px 36px -12px rgba(140,82,255,.6)}
+    .btn-primary:hover{background:#6B3FD4;transform:translateY(-2px)}
+    .btn-outline{border:1.5px solid rgba(0,0,0,.16);color:#000;background:transparent}.btn-outline:hover{border-color:#8C52FF;color:#8C52FF;transform:translateY(-2px)}
+    .btn-white{background:#fff;color:#8C52FF}.btn-white:hover{transform:translateY(-2px)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+    .display{letter-spacing:-0.035em;line-height:1.03}
+    .card{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1)}
+    .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -26px rgba(20,10,40,.3)}
+    .shadow-soft{box-shadow:0 1px 2px rgba(8,29,54,.04),0 12px 32px -20px rgba(8,29,54,.22)}
+    .chip{display:grid;place-items:center;width:3rem;height:3rem;border-radius:.85rem;background:rgba(140,82,255,.1);color:#8C52FF}
+    .pill{display:inline-flex;align-items:center;border-radius:9999px;padding:.4rem .9rem;font-size:.85rem;font-weight:500;font-family:'Plus Jakarta Sans',sans-serif}
+    .pill-yes{background:rgba(140,82,255,.12);color:#6B3FD4}
+    .pill-no{background:rgba(0,0,0,.04);color:#6B6570;border:1px solid #EFE9DE}
+    .bob{animation:bob 5s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    input[type=range].sup{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:9999px;background:linear-gradient(to right,#8C52FF var(--p,77%),#ECE5F8 var(--p,77%));outline:none}
+    input[type=range].sup::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:#8C52FF;border:5px solid #fff;box-shadow:0 6px 16px -3px rgba(140,82,255,.7);cursor:pointer;transition:transform .15s}
+    input[type=range].sup::-webkit-slider-thumb:hover{transform:scale(1.08)}
+    input[type=range].sup::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#8C52FF;border:5px solid #fff;cursor:pointer}
+    .faq-q{transition:color .2s}.faq-q:hover{color:#8C52FF}
+    /*.faq-hover-added*/
+  </style>
+</head>
+<body class="bg-paper">
+
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div id="nav" class="mt-3 flex items-center justify-between rounded-full pl-5 pr-3 py-2.5 bg-white/80 backdrop-blur-xl border border-line shadow-[0_10px_30px_-18px_rgba(0,0,0,.3)] transition-all duration-300">
+      <a href="index.html" class="shrink-0"><img src="https://assets.cdn.filesafe.space/p2dIZOM82vMDqT0ka5Tj/media/688c1a341fcebd6e78757872.png" alt="Super Smiles" class="h-8 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-1 text-[0.92rem] font-medium text-muted">
+        <a href="about-us.html" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-cream transition-colors">About</a>
+        <a href="how-it-works.html" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-cream transition-colors">How it works</a>
+        <a href="eligibility.html" class="px-3.5 py-2 rounded-full text-ink bg-cream transition-colors">Eligibility</a>
+        <a href="find-a-dentist.html" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-cream transition-colors">Find a dentist</a>
+        <a href="faq.html" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-cream transition-colors">FAQ</a>
+        <a href="contact-us.html" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-cream transition-colors">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#check" class="hidden sm:inline-flex btn btn-primary px-5 py-2.5 text-sm">Start the check</a>
+        <button id="menu-btn" class="lg:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-cream" aria-label="Open menu">
+          <svg id="ic-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="ic-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile" class="hidden lg:hidden mx-4 mt-2 rounded-3xl bg-white border border-line shadow-xl p-3">
+    <a href="about-us.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">About</a>
+    <a href="how-it-works.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">How it works</a>
+    <a href="eligibility.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">Eligibility</a>
+    <a href="find-a-dentist.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">Find a dentist</a>
+    <a href="faq.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">FAQ</a>
+    <a href="contact-us.html" class="block px-4 py-3 rounded-2xl font-medium hover:bg-cream">Contact</a>
+    <a href="#check" class="btn btn-primary w-full mt-2 py-3.5">Start the check</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO (light, decluttered) -->
+<section class="relative bg-cream overflow-hidden pt-36 lg:pt-44 pb-16 lg:pb-20">
+  <div class="absolute top-0 -right-24 w-[34rem] h-[34rem] rounded-full bg-violet/10 blur-[120px]"></div>
+  <div class="absolute -bottom-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-violet/5 blur-[120px]"></div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-8 text-center">
+    <span class="label text-violet reveal justify-center w-full">60-second eligibility check</span>
+    <h1 class="display reveal mt-6 text-[2.8rem] sm:text-6xl lg:text-7xl font-extrabold text-ink">Am I eligible?</h1>
+    <p class="reveal mt-7 text-lg sm:text-xl text-muted leading-relaxed">Let's find out — plainly and without judgment. A few quick questions, then drag the slider to see exactly what a release would cost. No personal details, no credit check.</p>
+    <div class="reveal mt-8 flex flex-col sm:flex-row gap-3.5 justify-center">
+      <a href="#check" class="btn btn-primary px-7 py-4">Take the check
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <a href="#estimator" class="btn btn-outline px-7 py-4">See the numbers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY CHECK (interactive, directly below hero) -->
+<section id="check" class="bg-paper py-16 lg:py-24 scroll-mt-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-8 reveal">
+    <div class="bg-white rounded-[2rem] border border-line shadow-soft p-6 sm:p-10">
+      <div class="flex items-center justify-between mb-7">
+        <span class="font-mono text-xs uppercase tracking-widest text-violet">Quick check</span>
+        <div class="flex items-center gap-2">
+          <div class="h-1.5 w-28 rounded-full bg-cream overflow-hidden"><div id="ck-bar" class="h-full bg-violet transition-all duration-500" style="width:0%"></div></div>
+          <span id="ck-count" class="text-xs text-muted tabular-nums">0/5</span>
+        </div>
+      </div>
+      <div id="ck-stage"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEE + TAX SLIDER (interactive, near top) -->
+<section id="estimator" class="bg-cream py-16 lg:py-24 scroll-mt-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-8">
+    <div class="text-center reveal">
+      <span class="label text-violet justify-center w-full">Fee &amp; tax estimator</span>
+      <h2 class="display mt-5 text-3xl sm:text-4xl font-bold text-ink">See the numbers before you commit</h2>
+      <p class="mt-4 text-muted">Drag to the amount you might need. We show our fee and an estimate of the tax — no surprises.</p>
+    </div>
+    <div class="reveal mt-10 bg-white rounded-[2rem] border border-line shadow-soft p-7 sm:p-10">
+      <div class="flex items-end justify-between">
+        <span class="text-sm font-semibold text-muted font-display">Amount to release</span>
+        <span id="sl-amt" class="font-display text-3xl sm:text-4xl font-extrabold text-ink tabular-nums">$40,000</span>
+      </div>
+      <input id="sl" type="range" min="5000" max="50000" step="1000" value="40000" class="sup mt-5" aria-label="Amount to release">
+      <div class="flex justify-between text-xs text-muted mt-2 font-mono"><span>$5k</span><span>$50k</span></div>
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-violet text-white p-5"><div class="text-xs font-semibold text-white/80 font-display">Our service fee</div><div id="sl-fee" class="font-display text-2xl font-extrabold mt-1 tabular-nums">$2,400</div><div class="text-xs text-white/70 mt-1">$600 per $10,000</div></div>
+        <div class="rounded-2xl bg-ink text-white p-5"><div class="text-xs font-semibold text-white/70 font-display">Estimated tax</div><div id="sl-tax" class="font-display text-2xl font-extrabold mt-1 tabular-nums">~$6,800</div><div class="text-xs text-white/55 mt-1">approx 17% · varies</div></div>
+        <div class="rounded-2xl bg-cream border border-line p-5"><div class="text-xs font-semibold text-muted font-display">Roughly left for treatment</div><div id="sl-net" class="font-display text-2xl font-extrabold mt-1 text-ink tabular-nums">~$30,800</div><div class="text-xs text-muted mt-1">after tax &amp; our fee</div></div>
+      </div>
+      <p class="mt-6 text-xs text-muted leading-relaxed">Estimate only. Early super release is taxed based on your age and circumstances, and the ATO and your fund determine the final amount — this uses an indicative rate to illustrate. Our $600-per-$10,000 fee is charged only on a successful release.</p>
+      <div class="mt-6"><a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn-primary px-7 py-4 w-full sm:w-auto">Get my exact numbers — free call</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- YOU MAY BE ELIGIBLE IF -->
+<section class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5 reveal">
+      <span class="label text-violet">In plain English</span>
+      <h2 class="display mt-5 text-4xl sm:text-5xl font-bold text-ink">You may be eligible if…</h2>
+      <p class="mt-6 text-lg text-muted leading-relaxed">If even a few of these ring true, it's worth a free check. People are often surprised they qualify.</p>
+    </div>
+    <div class="lg:col-span-7 space-y-3">
+      <div class="reveal card flex gap-4 bg-white rounded-2xl p-6 border border-line shadow-soft"><span class="w-7 h-7 rounded-full bg-violet/10 text-violet grid place-items-center text-sm font-bold shrink-0">✓</span><div><div class="font-semibold font-display">You've been told you need major dental work</div><div class="text-muted text-sm mt-1">Implants, crowns, extractions, root canals, oral surgery, reconstruction.</div></div></div>
+      <div class="reveal card flex gap-4 bg-white rounded-2xl p-6 border border-line shadow-soft"><span class="w-7 h-7 rounded-full bg-violet/10 text-violet grid place-items-center text-sm font-bold shrink-0">✓</span><div><div class="font-semibold font-display">You're in pain, discomfort or distress</div><div class="text-muted text-sm mt-1">Your dental condition is affecting your daily life — eating, sleeping, confidence.</div></div></div>
+      <div class="reveal card flex gap-4 bg-white rounded-2xl p-6 border border-line shadow-soft"><span class="w-7 h-7 rounded-full bg-violet/10 text-violet grid place-items-center text-sm font-bold shrink-0">✓</span><div><div class="font-semibold font-display">You have no other reasonable way to pay</div><div class="text-muted text-sm mt-1">No savings, insurance or other funds available to cover the treatment.</div></div></div>
+      <div class="reveal card flex gap-4 bg-white rounded-2xl p-6 border border-line shadow-soft"><span class="w-7 h-7 rounded-full bg-violet/10 text-violet grid place-items-center text-sm font-bold shrink-0">✓</span><div><div class="font-semibold font-display">You have some funds in your super</div><div class="text-muted text-sm mt-1">Any amount can help — we assess how much you may be able to access.</div></div></div>
+      <div class="reveal card flex gap-4 bg-white rounded-2xl p-6 border border-line shadow-soft"><span class="w-7 h-7 rounded-full bg-violet/10 text-violet grid place-items-center text-sm font-bold shrink-0">✓</span><div><div class="font-semibold font-display">You can get a GP letter and a dental quote</div><div class="text-muted text-sm mt-1">We help you arrange both — it's part of the service, not your homework.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFYING TREATMENTS (pills) -->
+<section class="bg-cream py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl reveal"><span class="label text-violet">What's covered</span><h2 class="display mt-5 text-4xl sm:text-5xl font-bold text-ink">Qualifying treatments</h2>
+      <p class="mt-5 text-lg text-muted">When it's medically necessary, a wide range of dental work can qualify. Purely cosmetic work generally doesn't — unless it restores genuine function.</p></div>
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <div class="reveal card bg-white rounded-[1.75rem] p-8 border border-line shadow-soft">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="chip"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.3 12l2.5 2.5 4.7-5.2"/></svg></span>
+          <div><h3 class="text-xl font-bold font-display">Often qualifies</h3><p class="text-muted text-sm">when medically necessary</p></div>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <span class="pill pill-yes">Dental implants</span><span class="pill pill-yes">Crowns &amp; bridges</span><span class="pill pill-yes">Root canals</span><span class="pill pill-yes">Extractions</span><span class="pill pill-yes">Oral surgery</span><span class="pill pill-yes">Reconstructive work</span><span class="pill pill-yes">Full-mouth rehab</span><span class="pill pill-yes">Trauma repair</span>
+        </div>
+        <p class="mt-6 text-xs text-muted">Qualifies when it relieves acute or chronic pain, or treats a serious condition.</p>
+      </div>
+      <div class="reveal card bg-white rounded-[1.75rem] p-8 border border-line shadow-soft">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="grid place-items-center w-12 h-12 rounded-[.85rem] bg-black/[.04] text-muted border border-line"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg></span>
+          <div><h3 class="text-xl font-bold font-display">Usually doesn't qualify</h3><p class="text-muted text-sm">purely cosmetic work</p></div>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <span class="pill pill-no">Teeth whitening</span><span class="pill pill-no">Cosmetic veneers</span><span class="pill pill-no">Elective straightening</span><span class="pill pill-no">Purely aesthetic work</span>
+        </div>
+        <p class="mt-6 text-sm text-muted bg-cream rounded-2xl p-4 border border-line"><strong class="text-ink">The exception:</strong> cosmetic-looking work can qualify when it has a genuine medical purpose — like restoring function after an accident. Not sure where yours fits? That's what the free check is for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 ATO REQUIREMENTS (design-system feature cards) -->
+<section class="bg-paper py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="max-w-2xl reveal"><span class="label text-violet">The ATO's requirements</span><h2 class="display mt-5 text-4xl sm:text-5xl font-bold text-ink">Three things, all handled</h2>
+      <p class="mt-5 text-lg text-muted">The ATO needs three things to approve a compassionate release. We gather every one of them for you.</p></div>
+    <div class="mt-14 grid md:grid-cols-3 gap-5">
+      <div class="reveal card bg-white rounded-[1.5rem] p-8 border border-line shadow-soft">
+        <span class="chip"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V7l-4-4Z"/><path d="M14 3v4h4"/><path d="M8.5 13h7M8.5 16.5h4"/></svg></span>
+        <h3 class="mt-5 text-xl font-bold font-display">An itemised dental quote</h3>
+        <p class="mt-2 text-muted leading-relaxed">A detailed quote from your dentist setting out the treatment and the exact cost. We make sure it's compliant.</p>
+      </div>
+      <div class="reveal card bg-white rounded-[1.5rem] p-8 border border-line shadow-soft">
+        <span class="chip"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4.5h6"/><path d="M12 10.5v5M9.5 13h5"/></svg></span>
+        <h3 class="mt-5 text-xl font-bold font-display">A letter from a GP</h3>
+        <p class="mt-2 text-muted leading-relaxed">A registered medical practitioner confirming the treatment is medically necessary. We help arrange this.</p>
+      </div>
+      <div class="reveal card rounded-[1.5rem] p-8 bg-violet text-white shadow-soft">
+        <span class="grid place-items-center w-12 h-12 rounded-[.85rem] bg-white/15 text-white"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2.5-7.5L3 11Z"/></svg></span>
+        <h3 class="mt-5 text-xl font-bold font-display">A correct application</h3>
+        <p class="mt-2 text-white/85 leading-relaxed">This is our part — preparing and lodging the ATO paperwork so it's complete, accurate, and far less likely to be delayed.</p>
+      </div>
+    </div>
+    <div class="reveal mt-8 rounded-2xl bg-cream border border-line p-6 max-w-3xl"><h3 class="font-semibold font-display">Applying for a dependent?</h3><p class="mt-2 text-muted text-sm leading-relaxed">You can also apply to release your super for a dependent's treatment — a child or partner — with evidence of the relationship and the condition. We'll guide you through it.</p></div>
+  </div>
+</section>
+
+<!-- HONEST BIT -->
+<section class="bg-cream py-24 lg:py-32">
+  <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center reveal">
+    <span class="label text-violet justify-center w-full">The honest bit</span>
+    <h2 class="display mt-5 text-3xl sm:text-4xl font-bold text-ink">A few things worth knowing upfront</h2>
+    <div class="mt-10 grid sm:grid-cols-3 gap-4 text-left">
+      <div class="card bg-white rounded-2xl p-6 border border-line shadow-soft"><h3 class="font-bold font-display">It's taxed</h3><p class="mt-2 text-muted text-sm">Accessing super early is taxed, and the amount depends on your circumstances. The estimator above gives you a feel for it.</p></div>
+      <div class="card bg-white rounded-2xl p-6 border border-line shadow-soft"><h3 class="font-bold font-display">It's a last resort</h3><p class="mt-2 text-muted text-sm">CRS is for when there's no other reasonable way to pay. It reduces your retirement balance, so it's a real decision.</p></div>
+      <div class="card bg-white rounded-2xl p-6 border border-line shadow-soft"><h3 class="font-bold font-display">No guarantees</h3><p class="mt-2 text-muted text-sm">The ATO and your super fund decide. We can't promise approval — but we can give your application its best shot.</p></div>
+    </div>
+    <p class="mt-8 text-sm text-muted">We're not financial advisers, and this isn't financial advice. For bigger decisions, it's wise to get independent advice too. You can read the official rules on the <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/access-on-compassionate-grounds" target="_blank" rel="noopener" class="text-violet font-semibold underline-offset-4 hover:underline">ATO website ↗</a>.</p>
+  </div>
+</section>
+
+<!-- CTA (dark — light→dark flow) -->
+<section class="relative bg-night text-white overflow-hidden">
+  <div class="absolute -top-24 right-0 w-[34rem] h-[34rem] rounded-full bg-violet/30 blur-[120px]"></div>
+  <div class="absolute -bottom-24 -left-10 w-[28rem] h-[28rem] rounded-full bg-violet/20 blur-[120px]"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-8 py-28 lg:py-36 text-center">
+    <h2 class="display reveal text-4xl sm:text-6xl font-extrabold">Still not sure? Just ask.</h2>
+    <p class="reveal mt-7 text-lg text-white/70 max-w-2xl mx-auto">A free, no-pressure chat is the surest way to know. If you're not eligible, we'll tell you honestly — we won't waste your time or your hope.</p>
+    <div class="reveal mt-10 flex flex-col sm:flex-row gap-3.5 justify-center">
+      <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn-primary px-8 py-4">Book my free check</a>
+      <a href="contact-us.html" class="btn btn-ghost px-8 py-4">Speak to a real person</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-night text-white/65 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+      <div>
+        <img src="https://assets.cdn.filesafe.space/p2dIZOM82vMDqT0ka5Tj/media/688c1a341fcebd6e78757872.png" alt="Super Smiles" class="h-8 w-auto mb-5 brightness-0 invert">
+        <p class="text-sm leading-relaxed mb-6 max-w-xs">Your super. Your smile. Our support. Helping everyday Australians legally access their super for urgent dental care — done for you.</p>
+        <div class="flex gap-2.5">
+          <a href="https://www.facebook.com/profile.php?id=61578878090029" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-violet grid place-items-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/supersmiles.au/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-violet grid place-items-center transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.tiktok.com/@supersmiles.au" target="_blank" rel="noopener" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/10 hover:bg-violet grid place-items-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 106.34 6.34V8.79a8.16 8.16 0 004.77 1.52V6.88a4.85 4.85 0 01-1-.19z"/></svg></a>
+          <a href="https://www.linkedin.com/in/super-smiles-287689376/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-violet grid place-items-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div><h4 class="text-white font-semibold mb-4 text-sm font-display">Explore</h4><ul class="space-y-3 text-sm">
+        <li><a href="about-us.html" class="hover:text-white">About us</a></li><li><a href="how-it-works.html" class="hover:text-white">How it works</a></li>
+        <li><a href="eligibility.html" class="hover:text-white">Eligibility</a></li><li><a href="find-a-dentist.html" class="hover:text-white">Find a dentist</a></li></ul></div>
+      <div><h4 class="text-white font-semibold mb-4 text-sm font-display">Support</h4><ul class="space-y-3 text-sm">
+        <li><a href="faq.html" class="hover:text-white">FAQ</a></li><li><a href="contact-us.html" class="hover:text-white">Contact us</a></li>
+        <li><a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="hover:text-white">Book a free call</a></li>
+        <li><a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/access-on-compassionate-grounds" target="_blank" rel="noopener" class="hover:text-white">ATO CRS information ↗</a></li></ul></div>
+      <div><h4 class="text-white font-semibold mb-4 text-sm font-display">Get in touch</h4><ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2.5"><span class="text-violet inline-flex"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span><a href="mailto:hello@supersmiles.au" class="hover:text-white">hello@supersmiles.au</a></li>
+        <li class="flex items-center gap-2.5"><span class="text-violet inline-flex"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="hover:text-white">Book a free consultation</a></li>
+        <li class="flex items-start gap-2.5"><span class="text-violet mt-0.5 inline-flex"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span>Servicing Australia only</span></li></ul></div>
+    </div>
+    <div class="border-t border-white/10 pt-8 mb-6"><p class="text-xs leading-relaxed max-w-4xl text-white/45"><strong class="text-white/70">Disclaimer:</strong> Super Smiles assists clients with ATO Compassionate Release of Super (CRS) applications for dental treatment. We are not licensed financial advisers and do not provide financial or tax advice. Eligibility is determined by the ATO and your super fund — we cannot guarantee approval. Early super withdrawals are taxed and reduce your retirement savings. Please consider seeking independent financial advice.</p></div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
+      <p>© 2026 Super Smiles. All rights reserved.</p>
+      <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+        <a href="https://supersmiles.au/terms--conditions" class="hover:text-white">Terms</a><a href="https://supersmiles.au/privacy-policy" class="hover:text-white">Privacy</a>
+        <a href="https://supersmiles.au/disclaimer" class="hover:text-white">Disclaimer</a><a href="https://supersmiles.au/cookie-policy" class="hover:text-white">Cookie policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');const onScroll=()=>{if(scrollY>20)nav.classList.add('!bg-white');else nav.classList.remove('!bg-white')};onScroll();addEventListener('scroll',onScroll,{passive:true});
+  const mb=document.getElementById('menu-btn'),mobile=document.getElementById('mobile'),io=document.getElementById('ic-open'),ic=document.getElementById('ic-close');
+  mb.addEventListener('click',()=>{mobile.classList.toggle('hidden');io.classList.toggle('hidden');ic.classList.toggle('hidden')});
+  mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.add('hidden');io.classList.remove('hidden');ic.classList.add('hidden')}));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  /* fee + tax slider */
+  const sl=document.getElementById('sl');
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-AU');
+  function upd(){const v=+sl.value;const p=(v-sl.min)/(sl.max-sl.min)*100;sl.style.setProperty('--p',p+'%');
+    document.getElementById('sl-amt').textContent=fmt(v);
+    const fee=v/10000*600;
+    document.getElementById('sl-fee').textContent=fmt(fee);
+    const tax=v*0.17;
+    document.getElementById('sl-tax').textContent='~'+fmt(tax);
+    document.getElementById('sl-net').textContent='~'+fmt(v-tax-fee);}
+  sl.addEventListener('input',upd);upd();
+
+  /* eligibility quiz */
+  const questions=[
+    {q:"Do you need dental treatment you can't currently afford?",sub:"Implants, crowns, extractions, root canals, oral surgery, reconstruction…"},
+    {q:"Are you (or a dependent) in dental pain, discomfort or distress?",sub:"Including problems affecting eating, sleeping, work or confidence."},
+    {q:"Is paying out of pocket genuinely out of reach right now?",sub:"No savings, insurance or other reasonable way to cover it.",thirdLabel:"Not sure"},
+    {q:"Do you have some funds in your superannuation?",sub:"Any amount can help — we'll assess how much you may access.",thirdLabel:"Not sure"},
+    {q:"Could a GP say the treatment is medically necessary?",sub:"Don't worry if you're unsure — we help arrange the GP letter.",thirdLabel:"Not sure"},
+  ];
+  const stage=document.getElementById('ck-stage'),bar=document.getElementById('ck-bar'),count=document.getElementById('ck-count');
+  let step=0,yes=0;
+  function render(){
+    bar.style.width=(step/questions.length*100)+'%';count.textContent=step+'/'+questions.length;
+    if(step>=questions.length)return result();
+    const it=questions[step];
+    stage.innerHTML=`<p class="font-mono text-xs uppercase tracking-widest text-violet mb-3">Question ${step+1}</p>
+      <h3 class="text-2xl sm:text-[1.7rem] font-bold leading-snug font-display">${it.q}</h3>
+      <p class="mt-2 text-muted">${it.sub}</p>
+      <div class="mt-7 flex flex-col sm:flex-row gap-3">
+        <button data-v="yes" class="ck-opt btn btn-primary px-6 py-4 flex-1">Yes</button>
+        <button data-v="no" class="ck-opt btn btn-outline px-6 py-4 flex-1">No</button>
+        ${it.thirdLabel?`<button data-v="maybe" class="ck-opt btn btn-outline px-6 py-4 flex-1">${it.thirdLabel}</button>`:''}
+      </div>${step>0?`<button id="ck-back" class="mt-5 text-sm text-muted hover:text-ink">← Back</button>`:''}`;
+    stage.querySelectorAll('.ck-opt').forEach(b=>b.addEventListener('click',()=>{const v=b.getAttribute('data-v');if(v==='yes'||v==='maybe')yes++;step++;render()}));
+    const back=document.getElementById('ck-back');if(back)back.addEventListener('click',()=>{step=Math.max(0,step-1);render()});
+  }
+  function result(){
+    bar.style.width='100%';count.textContent=questions.length+'/'+questions.length;
+    const likely=yes>=4,maybe=yes>=2;
+    const head=likely?"Good news — you may well be eligible.":maybe?"There's a real chance — let's check properly.":"Let's have a quick, honest chat.";
+    const body=likely?"Based on your answers, you may qualify to access your super for dental treatment. The next step is a free, no-obligation check where we confirm the details and explain your options.":maybe?"Some of your answers point to eligibility. People in your position are often approved — the surest way to know is a free, no-pressure check with our team.":"Eligibility depends on a few things, and the rules aren't always obvious. A short free chat is the surest way to know where you stand — with no pressure either way.";
+    const icon=likely?'<path d="M12 20s-7-4.4-7-9.6A4.2 4.2 0 0112 7a4.2 4.2 0 017 3.4C19 15.6 12 20 12 20Z"/>':'<path d="M21 12a8.5 8.5 0 01-12.2 7.7L3 21l1.3-5.8A8.5 8.5 0 1121 12Z"/><path d="M8.5 11h7M8.5 14h4"/>';
+    stage.innerHTML=`<div class="text-center py-2">
+      <div class="w-16 h-16 mx-auto rounded-2xl ${likely?'bg-violet/10 text-violet':'bg-black/[.05] text-ink'} grid place-items-center"><svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${icon}</svg></div>
+      <h3 class="mt-5 text-2xl sm:text-3xl font-bold font-display">${head}</h3>
+      <p class="mt-3 text-muted max-w-md mx-auto leading-relaxed">${body}</p>
+      <p class="mt-3 text-xs text-muted/80">A guide only. Final eligibility is decided by the ATO. We never share or store your answers.</p>
+      <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn-primary px-7 py-4">Book my free check</a>
+        <button id="ck-restart" class="btn btn-outline px-7 py-4">Start over</button>
+      </div></div>`;
+    document.getElementById('ck-restart').addEventListener('click',()=>{step=0;yes=0;render()});
+  }
+  render();
+</script>
+</body>
+</html>
