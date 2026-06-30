@@ -167,3 +167,14 @@
 
   render();
 })();
+
+/* before/after comparison slider (homepage) */
+(function () {
+  var ba = document.getElementById("baSlider");
+  if (!ba) return;
+  var r = ba.querySelector(".ba-range");
+  if (!r) return;
+  var set = function (v) { ba.style.setProperty("--pos", v + "%"); };
+  r.addEventListener("input", function () { set(r.value); });
+  set(r.value);
+})();
