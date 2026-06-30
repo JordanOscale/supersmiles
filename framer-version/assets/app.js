@@ -70,32 +70,6 @@
     });
   }
 
-  /* ---- cost slider: shows estimated tax + our fee ($600 per $10k) ---- */
-  var slider = document.getElementById("fee-slider");
-  if (slider) {
-    var calc = slider.closest("[data-calc]") || document;
-    var fmt = function (n) { return "$" + Math.round(n).toLocaleString("en-AU"); };
-    var amtEl = calc.querySelector("[data-amount]");
-    var taxEl = calc.querySelector("[data-tax]");
-    var feeEl = calc.querySelector("[data-svcfee]");
-    var netEl = calc.querySelector("[data-net]");
-    var update = function () {
-      var amt = +slider.value;
-      var tax = amt * 0.22;            // estimate only — actual depends on circumstances
-      var fee = (amt / 10000) * 600;   // $600 per $10,000 released
-      var net = amt - tax - fee;
-      if (amtEl) amtEl.textContent = fmt(amt);
-      if (taxEl) taxEl.textContent = fmt(tax);
-      if (feeEl) feeEl.textContent = fmt(fee);
-      if (netEl) netEl.textContent = fmt(net);
-      var pct = ((amt - slider.min) / (slider.max - slider.min)) * 100;
-      slider.style.background =
-        "linear-gradient(90deg, var(--violet) " + pct + "%, var(--cream-deep) " + pct + "%)";
-    };
-    slider.addEventListener("input", update);
-    update();
-  }
-
   /* ============================================================
      Eligibility self-check — the category's biggest unmet need.
      Plain-English, judgment-free, "you may be eligible" framing.
