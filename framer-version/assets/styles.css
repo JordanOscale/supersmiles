@@ -407,8 +407,8 @@ body.is-leaving main,body.is-leaving .site-footer{opacity:0;transition:opacity .
 .chatbox{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line-white);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;}
 .chatbox:hover{transform:translateY(-3px);box-shadow:0 46px 100px -44px rgba(26,20,12,.5);}
 .chatbox-head{display:flex;align-items:center;gap:13px;padding:16px 20px;background:var(--gradient-brand);color:#fff;}
-.chatbox-avatar{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:1.15rem;flex:none;overflow:hidden;}
-.chatbox-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.chatbox-avatar{width:54px;height:54px;border-radius:50%;background:#f3d6db;flex:none;overflow:hidden;position:relative;box-shadow:0 0 0 2px rgba(255,255,255,.55);}
+.chatbox-avatar img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;object-position:center 45%;display:block;filter:saturate(1.06) contrast(1.03);}
 .chatbox-name{font-family:var(--font-display);font-weight:700;font-size:1.08rem;line-height:1.1;}
 .chatbox-status{font-family:var(--font-body);font-size:.74rem;opacity:.92;display:flex;align-items:center;gap:7px;margin-top:3px;}
 .dot-live{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.3);animation:livepulse 1.8s ease-in-out infinite;}
