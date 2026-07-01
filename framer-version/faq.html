@@ -45,7 +45,7 @@
 <main>
 
 <!-- CHAT WITH SIERRA -->
-<section class="section" id="sierra" data-od-id="sierra">
+<section class="section section--white" id="sierra" data-od-id="sierra">
   <div class="container container--narrow">
     <div class="center reveal" style="margin-bottom:30px;">
       <span class="eyebrow center" style="margin-bottom:14px;">24/7 live chat</span>
@@ -54,7 +54,7 @@
     </div>
     <div class="chatbox reveal" id="sierraBox" role="button" tabindex="0" aria-label="Open the chat with Sierra">
       <div class="chatbox-head">
-        <span class="chatbox-avatar">S</span>
+        <span class="chatbox-avatar"><img id="sierraPic" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80" alt="Sierra"></span>
         <div>
           <div class="chatbox-name">Sierra</div>
           <div class="chatbox-status"><span class="dot-live"></span> Online now — replies instantly</div>
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="chatbox-input">
-        <input type="text" placeholder="Type your message…" aria-label="Message Sierra" data-chat readonly>
+        <input type="text" placeholder="Type your message…" aria-label="Message Sierra" data-chat>
         <button type="button" class="chatbox-send" data-chat aria-label="Send message"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12l16-7-6 15-3-6-7-2z"/></svg></button>
       </div>
     </div>
@@ -233,23 +233,31 @@
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6884a8b381758b4afa3c08d5"></script>
 <script>
 (function(){
+  function widget(){ return document.querySelector('chat-widget'); }
   function openSierra(){
-    try{
-      var cw=document.querySelector('chat-widget');
-      if(cw){
-        if(typeof cw.openWidget==='function'){cw.openWidget();return;}
-        if(cw.shadowRoot){var b=cw.shadowRoot.querySelector('button,[role=\'button\']');if(b){b.click();return;}}
-        cw.click();return;
-      }
-    }catch(e){}
-    var l=document.querySelector('[id^=\'lc_text-widget\'],.lc_text-widget,button[aria-label*=\'chat\' i]');
-    if(l&&l.click){l.click();}
+    var cw=widget();
+    if(cw){
+      try{ if(typeof cw.openWidget==='function'){ cw.openWidget(); return; } }catch(e){}
+      try{ var sr=cw.shadowRoot; if(sr){ var b=sr.querySelector('button,[role="button"],[class*="launcher"],[class*="bubble"]'); if(b){ b.click(); return; } } }catch(e){}
+      try{ cw.click(); }catch(e){}
+    }
   }
   document.querySelectorAll('#sierraBox, #sierraBox [data-chat]').forEach(function(el){
     el.addEventListener('click', function(e){ e.preventDefault(); openSierra(); });
   });
+  var inp=document.querySelector('#sierraBox input');
+  if(inp){ inp.addEventListener('focus', openSierra); }
   var box=document.getElementById('sierraBox');
-  if(box) box.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();openSierra();} });
+  if(box){ box.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openSierra(); } }); }
+  // best-effort: copy Sierra's avatar out of the widget into our header
+  var n=0, t=setInterval(function(){
+    n++; var cw=widget();
+    if(cw && cw.shadowRoot){
+      var img=cw.shadowRoot.querySelector('img'), mine=document.getElementById('sierraPic');
+      if(img && img.src && (img.src.indexOf('http')===0) && mine){ mine.src=img.src; }
+    }
+    if(n>24) clearInterval(t);
+  },500);
 })();
 </script>
 </body>
