@@ -229,35 +229,32 @@
 
 <script src="assets/app.js"></script>
 <script>(function(){var c=document.querySelector('[data-desk-cta]');function s(){c.style.display=window.innerWidth>=980?'inline-flex':'none';}s();window.addEventListener('resize',s);})();</script>
-<!-- Sierra live chat (LeadConnector) -->
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6884a8b381758b4afa3c08d5"></script>
 <script>
 (function(){
-  function widget(){ return document.querySelector('chat-widget'); }
-  function openSierra(){
-    var cw=widget();
-    if(cw){
-      try{ if(typeof cw.openWidget==='function'){ cw.openWidget(); return; } }catch(e){}
-      try{ var sr=cw.shadowRoot; if(sr){ var b=sr.querySelector('button,[role="button"],[class*="launcher"],[class*="bubble"]'); if(b){ b.click(); return; } } }catch(e){}
-      try{ cw.click(); }catch(e){}
-    }
+  var box=document.getElementById('sierraBox'); if(!box) return;
+  var body=box.querySelector('.chatbox-body');
+  var input=box.querySelector('.chatbox-input input');
+  var send=box.querySelector('.chatbox-send');
+  var BOOK="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c";
+  function scroll(){ body.scrollTop=body.scrollHeight; }
+  function bubble(html,who){ var d=document.createElement('div'); d.className='chat-msg chat-msg--'+who; d.innerHTML=html; body.appendChild(d); scroll(); return d; }
+  function typing(){ var d=document.createElement('div'); d.className='chat-msg chat-msg--bot chat-typing'; d.innerHTML='<span></span><span></span><span></span>'; body.appendChild(d); scroll(); return d; }
+  function reply(html){ var t=typing(); setTimeout(function(){ t.remove(); bubble(html,'bot'); }, 700); }
+  function answer(msg){
+    var m=msg.toLowerCase();
+    if(/(eligib|qualif|am i|check)/.test(m)) return 'Most people who’ve been told they need major dental work — and can’t easily pay for it — may be able to apply. The surest way to know is our free 60-second check. <a class="chat-cta" href="eligibility.html">Check eligibility →</a>';
+    if(/(how|work|process|step)/.test(m)) return 'Three simple steps: book a free consult, we prepare every document for you, then we lodge it and support you until your super is released. <a class="chat-cta" href="how-it-works.html">See how it works →</a>';
+    if(/(book|call|consult|appoint|speak|talk|start)/.test(m)) return 'Happy to help you get started — grab a free, no-obligation consultation whenever suits you. <a class="chat-cta" href="'+BOOK+'" target="_blank" rel="noopener">Book a free call →</a>';
+    if(/(dentist|clinic|quote)/.test(m)) return 'Use your own dentist, or we can suggest one experienced with this process — either way we help arrange the itemised quote. <a class="chat-cta" href="find-a-dentist.html">Find a dentist →</a>';
+    if(/(tax|retire)/.test(m)) return 'I’m not able to give tax advice — we’re not tax or financial advisers, so a registered professional is best for that. I can explain the process or check your eligibility, though. <a class="chat-cta" href="eligibility.html">Check eligibility →</a>';
+    if(/(cost|price|fee|pay|afford|money)/.test(m)) return 'Your eligibility check and first consultation are free, with no obligation — and we’ll always explain things clearly before you commit. <a class="chat-cta" href="'+BOOK+'" target="_blank" rel="noopener">Book a free call →</a>';
+    if(/(scam|safe|legit|trust|real|myGov|login)/.test(m)) return 'Fair to ask. It’s a genuine ATO program (Compassionate Release of Super), you lodge from your own myGov account, and we never ask for your login. <a class="chat-cta" href="eligibility.html">Check eligibility →</a>';
+    return 'I can help with eligibility, how it works, choosing a dentist, or booking a free call — which would you like?';
   }
-  document.querySelectorAll('#sierraBox, #sierraBox [data-chat]').forEach(function(el){
-    el.addEventListener('click', function(e){ e.preventDefault(); openSierra(); });
-  });
-  var inp=document.querySelector('#sierraBox input');
-  if(inp){ inp.addEventListener('focus', openSierra); }
-  var box=document.getElementById('sierraBox');
-  if(box){ box.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openSierra(); } }); }
-  // best-effort: copy Sierra's avatar out of the widget into our header
-  var n=0, t=setInterval(function(){
-    n++; var cw=widget();
-    if(cw && cw.shadowRoot){
-      var img=cw.shadowRoot.querySelector('img'), mine=document.getElementById('sierraPic');
-      if(img && img.src && (img.src.indexOf('http')===0) && mine){ mine.src=img.src; }
-    }
-    if(n>24) clearInterval(t);
-  },500);
+  function submit(text){ text=(text||'').trim(); if(!text) return; bubble(text.replace(/[<>&]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c];}),'user'); if(input) input.value=''; reply(answer(text)); }
+  if(send) send.addEventListener('click', function(){ submit(input && input.value); if(input) input.focus(); });
+  if(input) input.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); submit(input.value); } });
+  box.querySelectorAll('.chat-chip').forEach(function(c){ c.addEventListener('click', function(){ submit(c.textContent); }); });
 })();
 </script>
 </body>
