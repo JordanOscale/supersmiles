@@ -120,10 +120,10 @@
     var head = result.querySelector("[data-result-head]");
     var body = result.querySelector("[data-result-body]");
     if (likely) {
-      head.textContent = "Good news — you may well be eligible.";
-      body.textContent = "Based on your answers, people in your situation often qualify under the ATO's Compassionate Release of Super program. The only way to know for sure is a free check — and we'll do the paperwork either way.";
+      head.textContent = "It could be worth a free check.";
+      body.textContent = "People in situations like yours sometimes qualify — but only the ATO can decide. The free check is a no-obligation way to find out where you stand, and we handle the paperwork either way.";
     } else {
-      head.textContent = "You might still be eligible — let's check properly.";
+      head.textContent = "It's worth checking properly.";
       body.textContent = "Eligibility depends on a few details the ATO looks at, and a quick conversation often surfaces a path you didn't know you had. The check is free, with no obligation and no judgment.";
     }
     result.classList.add("show");
