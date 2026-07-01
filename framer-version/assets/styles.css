@@ -402,3 +402,26 @@ body.is-leaving main,body.is-leaving .site-footer{opacity:0;transition:opacity .
 .ba-tag{position:absolute;bottom:16px;font-family:var(--font-mono);font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45em .85em;border-radius:999px;color:#fff;pointer-events:none;}
 .ba-tag--before{left:16px;background:rgba(20,17,16,.55);backdrop-filter:blur(4px);}
 .ba-tag--after{right:16px;background:var(--violet);}
+
+/* ---------- Sierra inline chat box ---------- */
+.chatbox{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--line-white);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;}
+.chatbox:hover{transform:translateY(-3px);box-shadow:0 46px 100px -44px rgba(26,20,12,.5);}
+.chatbox-head{display:flex;align-items:center;gap:13px;padding:16px 20px;background:var(--gradient-brand);color:#fff;}
+.chatbox-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:1.15rem;flex:none;}
+.chatbox-name{font-family:var(--font-display);font-weight:700;font-size:1.08rem;line-height:1.1;}
+.chatbox-status{font-family:var(--font-body);font-size:.74rem;opacity:.92;display:flex;align-items:center;gap:7px;margin-top:3px;}
+.dot-live{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.3);animation:livepulse 1.8s ease-in-out infinite;}
+@keyframes livepulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.chatbox-body{padding:24px 20px;background:var(--cream);min-height:160px;}
+.chat-msg{max-width:86%;padding:13px 16px;font-family:var(--font-body);font-size:.95rem;line-height:1.5;}
+.chat-msg--bot{background:#fff;border:1px solid var(--line-white);border-radius:16px;border-bottom-left-radius:5px;color:var(--ink);box-shadow:var(--shadow-sm);}
+.chat-quick{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;}
+.chat-chip{font-family:var(--font-body);font-size:.85rem;font-weight:500;color:var(--violet-deep);background:var(--violet-wash);border:1px solid rgba(140,82,255,.22);border-radius:999px;padding:.5em 1.05em;cursor:pointer;transition:background .15s ease,transform .12s ease;}
+.chat-chip:hover{background:#E7DBFF;transform:translateY(-1px);}
+.chatbox-input{display:flex;align-items:center;gap:10px;padding:14px 16px;border-top:1px solid var(--line-white);background:#fff;}
+.chatbox-input input{flex:1;border:1.5px solid var(--line-white);border-radius:999px;padding:12px 16px;font:inherit;font-family:var(--font-body);background:var(--cream);color:var(--ink);cursor:pointer;}
+.chatbox-input input::placeholder{color:var(--faint);}
+.chatbox-input input:focus{outline:none;border-color:var(--violet);}
+.chatbox-send{width:46px;height:46px;border-radius:50%;background:var(--violet);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;transition:background .15s ease,transform .12s ease;}
+.chatbox-send:hover{background:var(--violet-deep);transform:scale(1.05);}
+.chatbox-send .ico{width:20px;height:20px;}

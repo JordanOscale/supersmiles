@@ -44,6 +44,39 @@
 
 <main>
 
+<!-- CHAT WITH SIERRA -->
+<section class="section" id="sierra" data-od-id="sierra">
+  <div class="container container--narrow">
+    <div class="center reveal" style="margin-bottom:30px;">
+      <span class="eyebrow center" style="margin-bottom:14px;">24/7 live chat</span>
+      <h1 class="display" style="font-size:clamp(2.2rem,1.4rem + 3vw,3.5rem);">Chat with <span class="grad-text">Sierra</span></h1>
+      <p class="lead" style="margin-top:16px;">Got a question right now? Sierra — our 24/7 assistant — can check if you might be eligible, explain how it works, or help you book a free call. Any time, no waiting.</p>
+    </div>
+    <div class="chatbox reveal" id="sierraBox" role="button" tabindex="0" aria-label="Open the chat with Sierra">
+      <div class="chatbox-head">
+        <span class="chatbox-avatar">S</span>
+        <div>
+          <div class="chatbox-name">Sierra</div>
+          <div class="chatbox-status"><span class="dot-live"></span> Online now — replies instantly</div>
+        </div>
+      </div>
+      <div class="chatbox-body">
+        <div class="chat-msg chat-msg--bot">Hi, I'm Sierra. Ask me anything about using your super for dental — or I can help you check if you might be eligible.</div>
+        <div class="chat-quick">
+          <button type="button" class="chat-chip" data-chat>Am I eligible?</button>
+          <button type="button" class="chat-chip" data-chat>How does it work?</button>
+          <button type="button" class="chat-chip" data-chat>Book a free call</button>
+        </div>
+      </div>
+      <div class="chatbox-input">
+        <input type="text" placeholder="Type your message…" aria-label="Message Sierra" data-chat readonly>
+        <button type="button" class="chatbox-send" data-chat aria-label="Send message"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12l16-7-6 15-3-6-7-2z"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- HERO -->
 <section class="section" style="padding-block:68px 56px;">
   <div class="container container--narrow center reveal in">
@@ -196,5 +229,28 @@
 
 <script src="assets/app.js"></script>
 <script>(function(){var c=document.querySelector('[data-desk-cta]');function s(){c.style.display=window.innerWidth>=980?'inline-flex':'none';}s();window.addEventListener('resize',s);})();</script>
+<!-- Sierra live chat (LeadConnector) -->
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6884a8b381758b4afa3c08d5"></script>
+<script>
+(function(){
+  function openSierra(){
+    try{
+      var cw=document.querySelector('chat-widget');
+      if(cw){
+        if(typeof cw.openWidget==='function'){cw.openWidget();return;}
+        if(cw.shadowRoot){var b=cw.shadowRoot.querySelector('button,[role=\'button\']');if(b){b.click();return;}}
+        cw.click();return;
+      }
+    }catch(e){}
+    var l=document.querySelector('[id^=\'lc_text-widget\'],.lc_text-widget,button[aria-label*=\'chat\' i]');
+    if(l&&l.click){l.click();}
+  }
+  document.querySelectorAll('#sierraBox, #sierraBox [data-chat]').forEach(function(el){
+    el.addEventListener('click', function(e){ e.preventDefault(); openSierra(); });
+  });
+  var box=document.getElementById('sierraBox');
+  if(box) box.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();openSierra();} });
+})();
+</script>
 </body>
 </html>
