@@ -453,5 +453,5 @@ body.is-leaving main,body.is-leaving .site-footer{opacity:0;transition:opacity .
 .legal-updated{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;}
 .legal-note{background:var(--violet-wash);border:1px solid rgba(140,82,255,.22);border-radius:14px;padding:16px 18px;margin:0 0 30px;font-family:var(--font-body);font-size:.92rem;color:var(--ink);line-height:1.6;}
 /* footer legal links row (below the line) */
-.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 20px;margin-top:22px;padding-top:22px;border-top:1px solid var(--on-dark-line);}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;}
 .footer-legal a{font-size:.82rem;padding-block:2px;}
