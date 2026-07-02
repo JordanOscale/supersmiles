@@ -12,6 +12,7 @@ Audience: Australians ~35–55, often financially stressed, in dental pain, wary
 - `bestprinciples.md` (competitive research) and `supersmiles.md` (business + colours brief) are the source docs.
 
 Pages (all in `framer-version/`): `index.html` (Home), `about-us.html`, `how-it-works.html`, `eligibility.html`, `find-a-dentist.html`, `faq.html`, `contact-us.html`.
+**Legal pages** (white bg, black text, built from the Termly templates): `terms-and-conditions.html`, `privacy-policy.html`, `cookie-policy.html`, `disclaimer.html` — linked from a `.footer-legal` row below the footer line on every page. They're AI-drafted from Termly form-structures and tailored to Super Smiles; **must be lawyer-reviewed** and have their `[placeholders]` (entity, ABN, contact, effective date, state) filled before publishing.
 Shared assets: `assets/styles.css` (all styling + design tokens), `assets/app.js` (all interactivity), `assets/sierra.png` (chatbot avatar). Nav + footer are duplicated in each HTML file (no shared include) — edit all pages when changing them (use a scripted find/replace).
 
 ## Hosting + deploy pipeline (auto-publish)

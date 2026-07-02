@@ -440,3 +440,18 @@ body.is-leaving main,body.is-leaving .site-footer{opacity:0;transition:opacity .
 .nav-badge-dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:navpulse 1.6s ease-in-out infinite;}
 @keyframes navpulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,.75);}50%{opacity:.45;box-shadow:0 0 0 4px rgba(255,255,255,0);}}
 .mobile-menu .nav-badge{font-size:.6rem;}
+
+/* ---------- legal / policy pages ---------- */
+.legal-body{max-width:768px;margin:0 auto;}
+.legal-body h2{font-family:var(--font-display);font-weight:700;font-size:1.42rem;color:var(--ink);margin:36px 0 12px;}
+.legal-body h3{font-family:var(--font-display);font-weight:700;font-size:1.08rem;color:var(--ink);margin:24px 0 8px;}
+.legal-body p,.legal-body li{font-family:var(--font-body);color:var(--ink);line-height:1.72;margin-bottom:14px;font-size:1rem;}
+.legal-body ul{padding-left:1.2em;margin-bottom:16px;}
+.legal-body li{margin-bottom:8px;}
+.legal-body a{color:var(--violet-deep);text-decoration:underline;}
+.legal-body strong{color:var(--ink);font-weight:700;}
+.legal-updated{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;}
+.legal-note{background:var(--violet-wash);border:1px solid rgba(140,82,255,.22);border-radius:14px;padding:16px 18px;margin:0 0 30px;font-family:var(--font-body);font-size:.92rem;color:var(--ink);line-height:1.6;}
+/* footer legal links row (below the line) */
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 20px;margin-top:22px;padding-top:22px;border-top:1px solid var(--on-dark-line);}
+.footer-legal a{font-size:.82rem;padding-block:2px;}
