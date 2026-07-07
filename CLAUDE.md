@@ -18,7 +18,8 @@ Shared assets: `assets/styles.css` (all styling + design tokens), `assets/app.js
 ## Hosting + deploy pipeline (auto-publish)
 - **GitHub:** `JordanOscale/supersmiles` (private), branch `main`. Repo root = this folder.
 - **Vercel:** project `jordan-os-projects/supersmiles`, **Root Directory = `framer-version`**, connected to the GitHub repo → **every push to `main` auto-builds & publishes**.
-- **Live URL:** https://supersmiles-jordan-os-projects.vercel.app  (deployment protection OFF = public).
+- **Live URL (our build — always review here):** https://supersmiles-jordan-os-projects.vercel.app  (also https://supersmiles.vercel.app; deployment protection OFF = public).
+- **⚠️ `supersmiles.au` is NOT our build (as of 7 Jul 2026).** The public domain `supersmiles.au` serves a SEPARATE, older site (behind Cloudflare with a Google origin, page title "SuperSmile") — it does **not** point to this Vercel project, so our changes never appear there. Repointing (add the domain in Vercel + change Cloudflare DNS) is deferred pending the founder's go-ahead. **If the user ever says "the changes aren't showing," check which URL they're viewing first** — they're likely on `supersmiles.au` instead of the Vercel URL.
 - **Standing preference: after ANY site change, automatically `git add` + `commit` + `push origin main`** — do not wait for the user to say "publish". Pushing = publishing (Vercel auto-deploys in ~30s). See memory `[[supersmiles-autodeploy]]`.
 - Tooling already set up: `gh` CLI at `~/.local/bin/gh` (git creds via `gh auth setup-git`); Vercel CLI authed as `jordan-6644`. `.vercel/` is gitignored via `framer-version/.gitignore`.
 
