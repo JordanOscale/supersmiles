@@ -494,3 +494,10 @@ img{max-width:100%;}
   .container{padding-inline:16px;}
   .btn{padding:.82em 1.35em;}
 }
+
+/* phones: let gradient highlight words wrap instead of forcing overflow */
+@media(max-width:759px){
+  .grad-text{white-space:normal;}
+  .trust-strip{flex-wrap:wrap;}
+  .pill-row{gap:12px;}
+}
