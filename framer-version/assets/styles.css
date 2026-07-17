@@ -455,3 +455,42 @@ body.is-leaving main,body.is-leaving .site-footer{opacity:0;transition:opacity .
 /* footer legal links row (below the line) */
 .footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;}
 .footer-legal a{font-size:.82rem;padding-block:2px;}
+
+/* ============================================================
+   MOBILE / RESPONSIVE POLISH (pre-launch)
+   Base layout is mobile-first; these tune spacing, prevent any
+   horizontal overflow, and keep floating hero badges on-screen.
+   ============================================================ */
+html{overflow-x:hidden;}
+img{max-width:100%;}
+
+/* tablet & phone: hero image column is stacked full-width — center it
+   so the absolutely-positioned trust badges never hang off-screen */
+@media(max-width:979px){
+  .grid-hero>div:last-child{margin-left:auto !important;margin-right:auto !important;}
+  .grid-hero{gap:46px;}
+}
+
+/* phones */
+@media(max-width:759px){
+  .section{padding-block:58px;}
+  .section--tight{padding-block:40px;}
+  .container{padding-inline:18px;}
+  #full-service .container{padding-inline:18px;}
+  .grid{gap:24px;}
+  /* trim oversized hero/section inline padding on phones */
+  section[style*="padding-block"]{padding-block:44px 52px !important;}
+  /* tame tall fixed-height media so images aren't huge on phones */
+  .media-frame img{height:clamp(300px,74vw,380px) !important;}
+  /* keep floating hero badges compact & inside the frame */
+  .grid-hero>div:last-child{max-width:400px;}
+  /* comfortable heading rhythm */
+  .section .center[style*="margin-bottom"]{margin-bottom:34px !important;}
+}
+
+/* small phones */
+@media(max-width:400px){
+  .display{font-size:2.35rem;line-height:1.08;}
+  .container{padding-inline:16px;}
+  .btn{padding:.82em 1.35em;}
+}
