@@ -475,8 +475,8 @@ img{max-width:100%;}
 @media(max-width:759px){
   .section{padding-block:58px;}
   .section--tight{padding-block:40px;}
-  .container{padding-inline:18px;}
-  #full-service .container{padding-inline:18px;}
+  .container{padding-inline:24px;}
+  #full-service .container{padding-inline:24px;}
   .grid{gap:24px;}
   /* trim oversized hero/section inline padding on phones */
   section[style*="padding-block"]{padding-block:44px 52px !important;}
@@ -491,7 +491,7 @@ img{max-width:100%;}
 /* small phones */
 @media(max-width:400px){
   .display{font-size:2.35rem;line-height:1.08;}
-  .container{padding-inline:16px;}
+  .container{padding-inline:20px;}
   .btn{padding:.82em 1.35em;}
 }
 
@@ -500,4 +500,23 @@ img{max-width:100%;}
   .grad-text{white-space:normal;}
   .trust-strip{flex-wrap:wrap;}
   .pill-row{gap:12px;}
+}
+
+/* ============================================================
+   MOBILE FIXES (phone feedback round)
+   ============================================================ */
+/* hamburger menu "Book free consultation" = gradient + white text (match desktop) */
+.mobile-menu a.btn{color:#fff;border-bottom:none;}
+.mobile-menu a.btn--grad{color:#fff;}
+
+/* remove the permanent sticky bottom CTA bar sitewide */
+.mobile-cta{display:none !important;}
+@media(max-width:979px){body{padding-bottom:0 !important;}}
+
+/* contact page: center the Book-a-free-consultation card content nicely on phones */
+@media(max-width:759px){
+  .book-cta-card .grid-split{gap:26px;}
+  .book-cta-card > .grid-split > div:first-child{text-align:center;}
+  .book-cta-card .icon-badge{margin-inline:auto;}
+  .book-cta-card .check-list{display:inline-block;text-align:left;margin-inline:auto;}
 }
