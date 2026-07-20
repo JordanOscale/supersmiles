@@ -49,7 +49,7 @@ Shared assets: `assets/styles.css` (all styling + design tokens), `assets/app.js
 - **Footer disclaimer** (all pages): trading name + ABN, "not the ATO / not advisers / can't guarantee outcome / last resort".
 
 ## Outstanding — founder must supply (visible `[placeholders]` left in the code; DO NOT invent)
-- `[Legal entity name]`, `[ABN]`, `[Business address]`, `[Phone]`, `[Email]` (footer + Contact), and a **Privacy Policy** page/link.
+- ✅ **Business details now supplied (21 Jul 2026):** entity **MEROITI, TUMAI**, ABN **75 527 278 804**, address **12 Saddlebred Ave, Werribee VIC 3030**, phone **0483 980 646**, email **hello@supersmiles.au** (email links open Gmail compose). These are live in the footer (all pages), Contact card, and legal pages; Terms governing law = Victoria. Placeholders removed.
 - **Affiliation with "Super Smiles Dental":** currently a neutral, always-true disclosure ("never required to use a dentist we suggest; we'll disclose any connection"). Swap to the exact wording once the relationship is confirmed.
 - Non-copy actions still open (founder): fee-charging legality / tax-agent status, conflict-of-interest structure, whether any clinic requires upfront payment, internal "Our Services" SOP wording, confirming the myGov process never uses client credentials.
 - **Sierra avatar** (`assets/sierra.png`) is a low-res Memoji screenshot — swap for a higher-res square PNG for crispness.
