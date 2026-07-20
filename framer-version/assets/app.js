@@ -142,13 +142,34 @@
   render();
 })();
 
-/* before/after comparison slider (homepage) */
+/* before/after comparison slider (homepage) — drag anywhere on the bar (mouse + touch) */
 (function () {
   var ba = document.getElementById("baSlider");
   if (!ba) return;
   var r = ba.querySelector(".ba-range");
-  if (!r) return;
-  var set = function (v) { ba.style.setProperty("--pos", v + "%"); };
-  r.addEventListener("input", function () { set(r.value); });
-  set(r.value);
+  var set = function (v) {
+    v = Math.max(0, Math.min(100, v));
+    ba.style.setProperty("--pos", v + "%");
+    if (r) r.value = v;
+  };
+  var posFrom = function (e) {
+    var rect = ba.getBoundingClientRect();
+    var cx = (e.clientX != null) ? e.clientX
+           : (e.touches && e.touches[0]) ? e.touches[0].clientX : rect.left;
+    return (cx - rect.left) / rect.width * 100;
+  };
+  var dragging = false;
+  ba.addEventListener("pointerdown", function (e) {
+    dragging = true;
+    try { ba.setPointerCapture(e.pointerId); } catch (x) {}
+    set(posFrom(e));
+    e.preventDefault();
+  });
+  ba.addEventListener("pointermove", function (e) { if (dragging) set(posFrom(e)); });
+  var stop = function () { dragging = false; };
+  ba.addEventListener("pointerup", stop);
+  ba.addEventListener("pointercancel", stop);
+  ba.addEventListener("lostpointercapture", stop);
+  if (r) r.addEventListener("input", function () { set(r.value); });
+  set(r ? r.value : 50);
 })();
