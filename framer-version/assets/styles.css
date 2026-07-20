@@ -520,3 +520,21 @@ img{max-width:100%;}
   .book-cta-card .icon-badge{margin-inline:auto;}
   .book-cta-card .check-list{display:inline-block;text-align:left;margin-inline:auto;}
 }
+
+/* ============================================================
+   MOBILE: center content + fix full-width button text overflow
+   ============================================================ */
+@media(max-width:759px){
+  /* full-width buttons: let long labels wrap instead of being cut off */
+  .btn--block{white-space:normal;}
+  /* center the marketing narrative content on phones */
+  .grid-hero>div, .grid-split>div, .container>.reveal:not(.card), .container>.center{text-align:center;}
+  .eyebrow{justify-content:center;}
+  .pill-row{justify-content:center;}
+  .icon-badge{margin-inline:auto;}
+  .check-list{display:inline-block;text-align:left;margin-inline:auto;}
+  /* keep long-form legal text left-aligned for readability */
+  .legal-body, .legal-body *{text-align:left;}
+  /* contact booking CTA button: comfortable padding so text isn't tight */
+  .book-cta-card .btn--lg{padding-inline:1.2em;}
+}
