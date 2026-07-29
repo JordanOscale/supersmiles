@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -23,7 +25,7 @@
       <a href="/contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn--grad" style="display:none" data-desk-cta>Book free consultation</a>
+      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Book free consultation</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="ico ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="ico ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -36,7 +38,7 @@
     <a href="/eligibility">Eligibility</a>
     <a href="/faq">FAQ<span class="nav-badge" title="Chat with Sierra — our 24/7 assistant"><span class="nav-badge-dot"></span>Chat</span></a>
     <a href="/contact">Contact</a>
-    <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn--grad btn--block">Book free consultation</a>
+    <a href="/book" class="btn btn--grad btn--block">Book free consultation</a>
   </div>
 </header>
 
@@ -201,7 +203,7 @@
         <h4>Get started</h4>
         <a href="/faq">FAQ</a><br>
         <a href="/contact">Contact</a><br>
-        <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener">Book a free call</a><br>
+        <a href="/book">Book a free call</a><br>
         <a href="/eligibility">Check eligibility</a>
       </div>
       <div>
@@ -227,7 +229,7 @@
 
 <div class="mobile-cta">
   <a href="/eligibility" class="btn btn--outline">Check eligibility</a>
-  <a href="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c" target="_blank" rel="noopener" class="btn btn--violet">Book free call</a>
+  <a href="/book" class="btn btn--violet">Book free call</a>
 </div>
 
 <script src="assets/app.js"></script>
@@ -238,7 +240,7 @@
   var body=box.querySelector('.chatbox-body');
   var input=box.querySelector('.chatbox-input input');
   var send=box.querySelector('.chatbox-send');
-  var BOOK="https://book.supersmiles.au/widget/booking/IcBxYi1F0l8vxlMzEX2c";
+  var BOOK="/book";
   function scroll(){ body.scrollTop=body.scrollHeight; }
   function bubble(html,who){ var d=document.createElement('div'); d.className='chat-msg chat-msg--'+who; d.innerHTML=html; body.appendChild(d); scroll(); return d; }
   function typing(){ var d=document.createElement('div'); d.className='chat-msg chat-msg--bot chat-typing'; d.innerHTML='<span></span><span></span><span></span>'; body.appendChild(d); scroll(); return d; }
@@ -247,10 +249,10 @@
     var m=msg.toLowerCase();
     if(/(eligib|qualif|am i|check)/.test(m)) return 'Most people who’ve been told they need major dental work — and can’t easily pay for it — may be able to apply. The surest way to know is our free 60-second check. <a class="chat-cta" href="/eligibility">Check eligibility →</a>';
     if(/(how|work|process|step)/.test(m)) return 'Three simple steps: book a free consult, we prepare every document for you, then the application is submitted and we stay with you until your super is released. <a class="chat-cta" href="/how-it-works">See how it works →</a>';
-    if(/(book|call|consult|appoint|speak|talk|start)/.test(m)) return 'Happy to help you get started — grab a free, no-obligation consultation whenever suits you. <a class="chat-cta" href="'+BOOK+'" target="_blank" rel="noopener">Book a free call →</a>';
+    if(/(book|call|consult|appoint|speak|talk|start)/.test(m)) return 'Happy to help you get started — grab a free, no-obligation consultation whenever suits you. <a class="chat-cta" href="'+BOOK+'">Book a free call →</a>';
     if(/(dentist|clinic|quote)/.test(m)) return 'Use your own dentist, or we can suggest one experienced with this process — either way you get the itemised quote from them, and we tell you what it needs to include. <a class="chat-cta" href="/how-it-works">See how it works →</a>';
     if(/(tax|retire)/.test(m)) return 'I’m not able to give tax advice — we’re not tax or financial advisers, so a registered professional is best for that. I can explain the process or check your eligibility, though. <a class="chat-cta" href="/eligibility">Check eligibility →</a>';
-    if(/(cost|price|fee|pay|afford|money)/.test(m)) return 'Your eligibility check and first consultation are free, with no obligation — and we’ll always explain things clearly before you commit. <a class="chat-cta" href="'+BOOK+'" target="_blank" rel="noopener">Book a free call →</a>';
+    if(/(cost|price|fee|pay|afford|money)/.test(m)) return 'Your eligibility check and first consultation are free, with no obligation — and we’ll always explain things clearly before you commit. <a class="chat-cta" href="'+BOOK+'">Book a free call →</a>';
     if(/(scam|safe|legit|trust|real|myGov|login)/.test(m)) return 'Fair to ask. It’s an official ATO program (Compassionate Release of Super), you lodge from your own myGov account, and we never ask for your login. <a class="chat-cta" href="/eligibility">Check eligibility →</a>';
     return 'I can help with eligibility, how it works, choosing a dentist, or booking a free call — which would you like?';
   }
