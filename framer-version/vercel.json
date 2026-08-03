@@ -1,7 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/google4f33d201dfa4e367.html", "destination": "/gsc-verify.txt" }
-  ]
+  "trailingSlash": false
 }
