@@ -28,6 +28,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/styles.css">
+<script src="assets/gate-config.js"></script>
 </head>
 <body>
 
@@ -61,6 +62,16 @@
 
 <main>
 
+<!-- ============================================================
+     BOOKING GATE — see assets/gate-config.js
+     gateOpen === false  ->  the waitlist state below is rendered
+     gateOpen === true   ->  the booking flow in the <template> is
+                             rendered instead, untouched.
+     The booking flow is HIDDEN, NOT REMOVED. Do not delete the
+     <template> — it is the live booking page.
+     ============================================================ -->
+
+<template id="booking-flow">
 <!-- HERO -->
 <section class="section" style="padding-block:56px 32px;">
   <div class="container container--narrow center reveal">
@@ -78,6 +89,38 @@
     </div>
   </div>
 </section>
+</template>
+
+<!-- WAITLIST STATE (rendered while the gate is closed) -->
+<section class="section" id="waitlist-state" style="padding-block:56px 72px;">
+  <div class="container container--narrow center reveal">
+    <h1 class="display">Consultations are currently <span class="grad-text">fully booked</span></h1>
+    <p class="lead" style="margin-top:18px;max-width:56ch;margin-inline:auto;">Next intake opens 12 September — join the waitlist to be contacted first.</p>
+
+    <!-- Replace this entire block with the waitlist form embed -->
+    <div id="waitlist-form-embed" style="min-height:500px;width:100%;margin-top:36px;border:2px dashed var(--line);border-radius:var(--r-lg);background:var(--white);display:grid;place-items:center;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);">FORM EMBED — placeholder</div>
+
+    <p style="margin-top:24px;color:var(--muted);">Waitlist members are contacted before public booking reopens.</p>
+  </div>
+</section>
+
+<script>
+/* Swap in the real booking flow once the gate has opened. Runs during
+   parse, before assets/app.js, so injected .reveal elements are still
+   picked up by the scroll-reveal observer. If this script never runs,
+   the waitlist stays — booking is never exposed by accident. */
+(function () {
+  var gate = window.SuperSmilesGate;
+  if (!gate || !gate.gateOpen) return;
+
+  var waitlist = document.getElementById("waitlist-state");
+  var tpl = document.getElementById("booking-flow");
+  if (!waitlist || !tpl) return;
+
+  waitlist.parentNode.insertBefore(document.importNode(tpl.content, true), waitlist);
+  waitlist.parentNode.removeChild(waitlist);
+})();
+</script>
 
 </main>
 
