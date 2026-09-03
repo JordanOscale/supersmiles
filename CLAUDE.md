@@ -6,22 +6,24 @@ This file is the source of truth for working on the Super Smiles website. If you
 Super Smiles is an Australian **done-for-you service** that helps everyday Australians **prepare and organise** an application for early release of super on **compassionate grounds (the ATO's CRS program)** for **urgent dental treatment**. Domain: **supersmiles.au**. Tagline: *"Your super. Your smile. Our support."*
 Audience: Australians ~35–55, often financially stressed, in dental pain, wary of scams. Voice: warm, plain-English, short sentences, no hype, no shame, no jargon.
 
-## The ONE live site: `framer-version/`
-- **`framer-version/` is the canonical, live build. Only edit this** unless explicitly told otherwise.
-- The other folders — `claude-version/`, `eloquent-version/`, `vercel-version/` — are **old drafts, NOT deployed**, and still contain outdated / non-compliant copy (old fees, tax %, "super-approved", etc.). Don't edit or copy from them unless asked; they're reference only.
+## The ONE live site: `super-smiles-website/`
+- **`super-smiles-website/` is the canonical, live build — the only site folder in the repo.** (Renamed from `framer-version/` on 3 Sep 2026.)
+- The old mockup folders — `claude-version/`, `eloquent-version/`, `vercel-version/` — were **deleted on 3 Sep 2026** (unused drafts with outdated / non-compliant copy). They're recoverable from git history if ever needed.
 - `bestprinciples.md` (competitive research) and `supersmiles.md` (business + colours brief) are the source docs.
 
-Pages (all in `framer-version/`): `index.html` (Home), `about-us.html`, `how-it-works.html`, `eligibility.html`, `find-a-dentist.html`, `faq.html`, `contact-us.html`.
+Pages (all in `super-smiles-website/`): `index.html` (Home), `about.html`, `how-it-works.html`, `eligibility.html`, `faq.html`, `contact.html`, `book.html`.
+Internal links are **extensionless** (`/about`, `/faq`) — `vercel.json` sets `cleanUrls: true`.
 **Legal pages** (white bg, black text, built from the Termly templates): `terms-and-conditions.html`, `privacy-policy.html`, `cookie-policy.html`, `disclaimer.html` — linked from a `.footer-legal` row below the footer line on every page. They're AI-drafted from Termly form-structures and tailored to Super Smiles; **must be lawyer-reviewed** and have their `[placeholders]` (entity, ABN, contact, effective date, state) filled before publishing.
 Shared assets: `assets/styles.css` (all styling + design tokens), `assets/app.js` (all interactivity), `assets/sierra.png` (chatbot avatar). Nav + footer are duplicated in each HTML file (no shared include) — edit all pages when changing them (use a scripted find/replace).
 
 ## Hosting + deploy pipeline (auto-publish)
 - **GitHub:** `JordanOscale/supersmiles` (private), branch `main`. Repo root = this folder.
-- **Vercel:** project `jordan-os-projects/supersmiles`, **Root Directory = `framer-version`**, connected to the GitHub repo → **every push to `main` auto-builds & publishes**.
+- **Vercel:** project `jordan-os-projects/supersmiles`, **Root Directory = `super-smiles-website`**, connected to the GitHub repo → **every push to `main` auto-builds & publishes**. ⚠️ If the folder is ever renamed again, update this setting in the Vercel dashboard *before* pushing or the build breaks.
 - **Live URL (our build — always review here):** https://supersmiles-jordan-os-projects.vercel.app  (also https://supersmiles.vercel.app; deployment protection OFF = public).
 - **⚠️ `supersmiles.au` is NOT our build (as of 7 Jul 2026).** The public domain `supersmiles.au` serves a SEPARATE, older site (behind Cloudflare with a Google origin, page title "SuperSmile") — it does **not** point to this Vercel project, so our changes never appear there. Repointing (add the domain in Vercel + change Cloudflare DNS) is deferred pending the founder's go-ahead. **If the user ever says "the changes aren't showing," check which URL they're viewing first** — they're likely on `supersmiles.au` instead of the Vercel URL.
 - **Standing preference: after ANY site change, automatically `git add` + `commit` + `push origin main`** — do not wait for the user to say "publish". Pushing = publishing (Vercel auto-deploys in ~30s). See memory `[[supersmiles-autodeploy]]`.
-- Tooling already set up: `gh` CLI at `~/.local/bin/gh` (git creds via `gh auth setup-git`); Vercel CLI authed as `jordan-6644`. `.vercel/` is gitignored via `framer-version/.gitignore`.
+- Tooling already set up: `gh` CLI at `~/.local/bin/gh` (git creds via `gh auth setup-git`). `.vercel/` is gitignored via `super-smiles-website/.gitignore`.
+- ⚠️ **Vercel CLI is currently authed to a DIFFERENT account** (team `onestaaack` / "Team OS"), not `jordan-os-projects` — so it can't read or change the supersmiles project settings. Use the dashboard, or `vercel login` as the right account first.
 
 ## Design system (in `assets/styles.css` `:root`)
 - **Fonts:** Plus Jakarta Sans = display/headings (`--font-display`); Outfit = body (`--font-body`); Space Mono = eyebrows/labels/nav badge (`--font-mono`); Barlow Condensed = big stat numbers (`--font-condensed`). Matches the DS at https://super-smile-ds.vercel.app.
