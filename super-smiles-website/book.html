@@ -103,7 +103,7 @@
     <div id="waitlist-form-embed" style="margin-top:28px;text-align:left;">
       <iframe
         src="https://book.supersmiles.au/widget/form/hrlBhlEZh4CauwPfcpPN"
-        style="width:100%;height:964px;border:none;display:block;"
+        style="width:100%;height:980px;border:none;display:block;"
         id="inline-hrlBhlEZh4CauwPfcpPN"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
@@ -113,7 +113,7 @@
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="Waitlist Form"
-        data-height="964"
+        data-height="1244"
         data-layout-iframe-id="inline-hrlBhlEZh4CauwPfcpPN"
         data-form-id="hrlBhlEZh4CauwPfcpPN"
         data-cookie-consent="true"
@@ -121,8 +121,11 @@
         title="Waitlist Form"
         scrolling="no"></iframe>
     </div>
-    <!-- LeadConnector's resize script: listens for the form's postMessage
-         and sets the iframe height, so the 964px above is a starting value. -->
+    <!-- LeadConnector's resize script: listens for the form's postMessage and
+         sets the real iframe height. The 980px above is only the pre-measure
+         starting value, set to the height this form actually renders at so the
+         page doesn't jump on load. It deliberately differs from data-height
+         (1244) — that is GHL's builder-canvas height, not the rendered height. -->
     <script src="https://book.supersmiles.au/js/form_embed.js"></script>
 
     <p style="margin-top:24px;color:var(--muted);">Waitlist members are contacted before public booking reopens.</p>
