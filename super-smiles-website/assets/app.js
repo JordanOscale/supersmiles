@@ -55,24 +55,29 @@
      .sr-only paragraph, announced once instead of on every repeat. */
   var announce = document.querySelector(".announce");
   if (announce) {
-    var track = announce.querySelector(".announce__track");
-    /* Seed from the message for the ACTIVE state — the inactive one is
-       display:none, so it would measure 0 wide and clone the wrong copy. */
+    /* Each state has its own track; only the active one is displayed, so
+       measure that one — a display:none track measures 0 wide. */
     var state = document.documentElement.getAttribute("data-bookings") || "closed";
-    var seed = track && track.querySelector('.announce__item[data-when="' + state + '"]');
+    var track = announce.querySelector('.announce__track[data-when="' + state + '"]');
     var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (track && seed && !reduced) {
-      /* Fill the widest plausible viewport, then double the whole group so
-         translateX(-50%) lands exactly one group along — a seamless loop
-         with no empty gap. Use screen width so rotating or resizing the
-         window can't reveal the end of the track. */
-      var unit = seed.getBoundingClientRect().width;
-      var target = Math.max(window.innerWidth, window.screen ? window.screen.width : 0) + unit;
-      var perGroup = unit > 0 ? Math.max(2, Math.ceil(target / unit)) : 8;
+    if (track && track.children.length && !reduced) {
+      /* One "phrase cycle" is every phrase in the track, in order. Repeat
+         whole cycles until they outrun the widest plausible viewport, then
+         double the lot so translateX(-50%) lands exactly one group along —
+         a seamless loop with no empty gap and no phrase cut mid-cycle.
+         Screen width, not innerWidth, so resizing can't reveal the end. */
+      var cycle = [].slice.call(track.children);
+      var cycleWidth = cycle.reduce(function (w, el) {
+        return w + el.getBoundingClientRect().width;
+      }, 0);
+      var target = Math.max(window.innerWidth, window.screen ? window.screen.width : 0) + cycleWidth;
+      var reps = cycleWidth > 0 ? Math.max(2, Math.ceil(target / cycleWidth)) : 4;
 
       var group = document.createDocumentFragment();
-      for (var i = 0; i < perGroup; i++) group.appendChild(seed.cloneNode(true));
+      for (var i = 0; i < reps; i++) {
+        for (var j = 0; j < cycle.length; j++) group.appendChild(cycle[j].cloneNode(true));
+      }
       track.innerHTML = "";
       track.appendChild(group.cloneNode(true));
       track.appendChild(group);

@@ -37,16 +37,18 @@
      Flip BOOKINGS_OPEN in that one file to switch every page. -->
 <div class="announce" role="region" aria-label="Site announcement">
   <div class="announce__inner">
-    <p class="sr-only" data-when="closed">Bookings are closed. Join the waitlist.</p>
+    <p class="sr-only" data-when="closed">Bookings are closed. Join the waitlist. Referrals still welcome.</p>
     <p class="sr-only" data-when="open">Bookings are open.</p>
     <div class="announce__viewport" aria-hidden="true">
-      <div class="announce__track">
-        <span class="announce__item" data-when="closed">Bookings are closed</span>
-        <span class="announce__item" data-when="open">Bookings are open</span>
+      <div class="announce__track" data-when="closed">
+        <span class="announce__item">Bookings are closed</span>
+        <span class="announce__item">Join the waitlist</span>
+        <span class="announce__item">Referrals still welcome</span>
+      </div>
+      <div class="announce__track" data-when="open">
+        <span class="announce__item">Bookings are open</span>
       </div>
     </div>
-    <a class="announce__cta" href="/book" data-when="closed">Join waitlist</a>
-    <a class="announce__cta" href="/book" data-when="open">Book now</a>
     <button class="announce__dismiss" type="button" aria-label="Dismiss announcement">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>

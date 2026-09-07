@@ -579,8 +579,11 @@ img{max-width:100%;}
    painted on the first frame. The two states never coexist: the
    inactive message is display:none, not merely hidden.
 
-   Only the MESSAGE scrolls. The CTA is pinned static on the right —
-   a moving link is near-impossible to hit, especially on mobile.
+   The bar carries no link: it is informational only. The action lives
+   in the nav CTA immediately below it, which never moves.
+
+   Each state owns its own track, so the last phrase's separator dot can
+   be dropped under reduced motion without counting hidden siblings.
    ================================================================== */
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
@@ -604,15 +607,13 @@ img{max-width:100%;}
   padding-block:0;
   padding-inline:16px;                                      /* px-4 */
 }
-/* NOTE ON HEIGHT — a 44px bar cannot contain a 44px tap target plus 12px
-   of padding above and below it (44 + 24 = 68). The tap target wins: the
-   bar is 48px, the pill is 36px tall, and its hit area is stretched back
-   out to 44px by the ::after below — which fits inside 48px. */
+/* 48px tall: the dismiss control needs a 44px tap target (WCAG 2.5.8),
+   which will not fit inside a 44px bar with padding either side of it. */
 
 /* ---- scrolling message track ---- */
 .announce__viewport{flex:1 1 auto;min-width:0;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20px,#000 calc(100% - 44px),transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 20px,#000 calc(100% - 44px),transparent);}
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20px,#000 calc(100% - 20px),transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 20px,#000 calc(100% - 20px),transparent);}
 .announce__track{display:flex;width:max-content;}
 .announce__track.is-marquee{will-change:transform;animation:announce-scroll 35s linear infinite;}
 @keyframes announce-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -625,21 +626,6 @@ img{max-width:100%;}
   font-size:.8125rem;font-weight:500;letter-spacing:.01em;}   /* --text-caption */
 .announce__item::after{content:"\2022";margin-inline:24px;opacity:.5;} /* • gap-6 */
 
-/* ---- pinned CTA (never scrolls) ---- */
-.announce__cta{
-  position:relative;
-  flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
-  min-height:36px;padding:0 18px;
-  border-radius:var(--pill);
-  background:var(--violet-deep);color:var(--white);                  /* 6.39:1 — AA */
-  font-size:.8125rem;font-weight:600;line-height:1;
-  transition:background .15s,transform .15s;
-}
-/* Invisible 44px hit area (WCAG 2.5.8) around the 36px pill. */
-.announce__cta::after{content:"";position:absolute;left:0;right:0;
-  top:50%;transform:translateY(-50%);height:44px;}
-.announce__cta:hover{background:var(--violet);transform:translateY(-1px);}
-.announce__cta:focus-visible{outline:2px solid var(--violet-deep);outline-offset:2px;}
 
 .announce__dismiss{
   flex:0 0 auto;display:grid;place-items:center;
@@ -657,8 +643,6 @@ img{max-width:100%;}
   border-bottom-color:transparent;
   color:var(--white);
 }
-[data-bookings="open"] .announce__cta{background:var(--white);color:var(--violet-deep);}
-[data-bookings="open"] .announce__cta:hover{background:var(--cream);}
 
 /* Exactly one message ever renders. */
 [data-bookings="closed"] .announce [data-when="open"],
@@ -667,15 +651,17 @@ img{max-width:100%;}
 @media(min-width:720px){
   .announce__inner{padding-inline:24px;}                     /* px-6 */
   .announce__item{font-size:.9375rem;}                       /* --text-label */
-  .announce__cta{font-size:.875rem;padding:0 20px;}
 }
 
 /* ---- reduced motion: no scrolling at all, one static centred copy ---- */
 @media(prefers-reduced-motion:reduce){
-  .announce__viewport{-webkit-mask-image:none;mask-image:none;}
-  .announce__track{animation:none;transform:none;width:100%;justify-content:center;}
-  .announce__item ~ .announce__item{display:none;}
-  .announce__item::after{content:none;}
-  .announce__cta{transition:none;}
-  .announce__cta:hover{transform:none;}
+  .announce{overflow:visible;}
+  .announce__viewport{-webkit-mask-image:none;mask-image:none;overflow:visible;}
+  /* All phrases, static, centred — wrapping onto a second line on narrow
+     screens rather than hiding any of them. */
+  .announce__track{animation:none;transform:none;width:100%;
+    flex-wrap:wrap;justify-content:center;row-gap:2px;}
+  .announce__item{white-space:normal;}
+  .announce__item:last-child::after{content:none;}   /* no trailing dot */
+  .announce__inner{padding-block:8px;}
 }
