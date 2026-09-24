@@ -1,0 +1,259 @@
+<!--
+================================================================
+  02 · About
+  GHL slug: /about
+----------------------------------------------------------------
+  Paste everything BELOW this comment into a single full-width
+  Custom Code / HTML element on the blank "About" page.
+
+  These go in GHL's page Settings, not in the markup:
+
+  SEO title       About Us — Super Smiles
+  Meta description Super Smiles helps everyday Australians use their own super for urgent dental care — without loans, confusion or judgment. Our mission, our story, and why we only do dental.
+  OG image        https://supersmiles-jordan-os-projects.vercel.app/assets/og-image-v4.jpg
+  Canonical       /about
+================================================================
+-->
+
+<div class="ss-root">
+<!-- ============ ANNOUNCEMENT TICKER ============
+     State + dismiss come from the gate script in GHL's HEAD tracking code
+     (SETUP-1-head-code.html). Flip BOOKINGS_OPEN there to switch every page. -->
+<div class="announce" role="region" aria-label="Site announcement">
+  <div class="announce__inner">
+    <p class="sr-only" data-when="closed">Bookings are closed. Join the waitlist. Referrals still welcome.</p>
+    <p class="sr-only" data-when="open">Bookings are open.</p>
+    <div class="announce__viewport" aria-hidden="true">
+      <div class="announce__track" data-when="closed">
+        <span class="announce__item">Bookings are closed</span>
+        <span class="announce__item">Join the waitlist</span>
+        <span class="announce__item">Referrals still welcome</span>
+      </div>
+      <div class="announce__track" data-when="open">
+        <span class="announce__item">Bookings are open</span>
+      </div>
+    </div>
+    <button class="announce__dismiss" type="button" aria-label="Dismiss announcement">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" aria-label="Super Smiles home"><img class="nav-logo" src="https://assets.cdn.filesafe.space/p2dIZOM82vMDqT0ka5Tj/media/688c1a341fcebd6e78757872.png" alt="Super Smiles"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/about" class="is-active">About</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/eligibility">Eligibility</a>
+      <a href="/faq">FAQ<span class="nav-badge" title="Chat with Sierra — our 24/7 assistant"><span class="nav-badge-dot"></span>Chat</span></a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Join Waitlist</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="ico ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/about">About</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/eligibility">Eligibility</a>
+    <a href="/faq">FAQ<span class="nav-badge" title="Chat with Sierra — our 24/7 assistant"><span class="nav-badge-dot"></span>Chat</span></a>
+    <a href="/contact">Contact</a>
+    <a href="/book" class="btn btn--grad btn--block">Join Waitlist</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="section" style="padding-block:72px 60px;">
+  <div class="container container--narrow center reveal">
+    <span class="eyebrow center" style="margin-bottom:16px;">About Super Smiles</span>
+    <h1 class="display">We turn super into <span class="grad-text">real solutions</span> — not distant dreams.</h1>
+    <p class="lead" style="margin-top:22px;max-width:56ch;margin-inline:auto;">Too many Australians live with dental pain while their own money sits locked away in super, behind a process that feels built to confuse them. We exist to change that — one application at a time.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section section--white">
+  <div class="container">
+    <div class="grid grid-split">
+      <div class="reveal">
+        <div class="media-frame"><img src="https://supersmiles-jordan-os-projects.vercel.app/assets/about-story.jpg" alt="A woman laughing with a bright, healthy smile" style="height:500px;object-position:center 18%;"></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow" style="margin-bottom:16px;">Our story</span>
+        <h2 class="h1">No loans. No credit cards. <span class="em">No judgment.</span></h2>
+        <p class="lead" style="margin-top:16px;">When you can't afford urgent dental work, the usual answers are a loan you can't service or a credit card you'll regret. We think there’s a better way: your own super, accessed the way the program allows.</p>
+        <p class="body" style="margin-top:14px;">The hard part was never the program itself — it was the paperwork. The forms, the medical letters, the back-and-forth with the fund. So we built a service that handles all of that for people — in plain English, and with respect at every step. Because needing help with your health isn't something to be ashamed of.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE / WHAT WE'RE NOT -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-split">
+      <div class="reveal">
+        <span class="eyebrow" style="margin-bottom:16px;">Who we are</span>
+        <h2 class="h1">A document-preparation &amp; <span class="em">support service</span>.</h2>
+        <p class="lead" style="margin-top:16px;">We help you gather, organise and check the paperwork for a Compassionate Release of Super application, and we support you while the ATO assesses it.</p>
+      </div>
+      <div class="card card--pad-lg reveal">
+        <span class="eyebrow" style="margin-bottom:14px;">What we're not</span>
+        <p class="body" style="margin-bottom:12px;">We're not financial advisers, not tax or legal advisers, not the ATO, and not a dental or medical provider.</p>
+        <ul class="check-list" style="margin:0;">
+          <li><span class="tick"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span> Your dentist makes the clinical decisions</li>
+          <li><span class="tick"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span> The ATO decides your application</li>
+          <li><span class="tick"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span> You lodge it from your own myGov account</li>
+        </ul>
+        <p class="body small" style="margin-top:14px;">We make the process clearer — we don't change the outcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="grid grid-2 reveal">
+      <div class="card card--dark card--pad-lg">
+        <span class="eyebrow" style="margin-bottom:14px;">Our mission</span>
+        <p class="h3" style="color:#fff;font-weight:500;">To turn superannuation into a practical, immediate solution for urgent dental needs — <span class="em" style="color:#C9B3FF;">one application at a time</span>.</p>
+      </div>
+      <div class="card card--dark card--pad-lg">
+        <span class="eyebrow" style="margin-bottom:14px;">Our vision</span>
+        <p class="h3" style="color:#fff;font-weight:500;">To help thousands of Australians each year turn their super into real solutions, <span class="em" style="color:#C9B3FF;">not distant dreams</span>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DENTAL ONLY -->
+<section class="section">
+  <div class="container">
+    <div class="center reveal" style="max-width:600px;margin-inline:auto;margin-bottom:48px;">
+      <span class="eyebrow center" style="margin-bottom:14px;">Why dental only</span>
+      <h2 class="h1">One focus. <span class="em">Done properly.</span></h2>
+      <p class="lead" style="margin-top:16px;">Other services stretch across IVF, weight-loss surgery and more. We chose to go deep on one thing.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card card--pad-lg">
+        <span class="icon-badge" style="margin-bottom:16px;"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5c2-2 5-2 6 1 1 4-2 6-2 10 0 1-1 2-2 1-1-3 0-5-2-5s-1 2-2 5c-1 1-2 0-2-1 0-4-3-6-2-10 1-3 4-3 6-1z"/></svg></span>
+        <h3 class="h3" style="margin-bottom:8px;">Dental specialists</h3>
+        <p class="body">We know how to put together a complete, itemised dental application — so there are fewer delays. The clinical decisions are always your dentist’s.</p>
+      </div>
+      <div class="card card--pad-lg">
+        <span class="icon-badge" style="margin-bottom:16px;"><svg class="ico" viewBox="0 0 24 24"><path d="M8 10h8M8 14h5"/><path d="M21 12a9 9 0 11-3.5-7.1L21 4"/></svg></span>
+        <h3 class="h3" style="margin-bottom:8px;">Plain speak, not legal speak</h3>
+        <p class="body">We explain everything the way you'd explain it to a mate — short sentences, no jargon, no fine-print energy.</p>
+      </div>
+      <div class="card card--pad-lg">
+        <span class="icon-badge" style="margin-bottom:16px;"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a4.5 4.5 0 018-2 4.5 4.5 0 018 2c-2 4.5-7 9-7 9z"/></svg></span>
+        <h3 class="h3" style="margin-bottom:8px;">Built on real empathy</h3>
+        <p class="body">Our whole approach is shaped around the person on the other end — stressed, in pain, and tired of being told "no." We lead with dignity, not pity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section--white">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:44px;">
+      <span class="eyebrow center" style="margin-bottom:14px;">What we stand for</span>
+      <h2 class="h1">Our values</h2>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card">
+        <span class="icon-badge" style="margin-bottom:14px;"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3 class="h4" style="margin-bottom:6px;">Security</h3><p class="small body">A clear, official path — no grey areas, no surprises.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge" style="margin-bottom:14px;"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5.5 20a6.5 6.5 0 0113 0"/></svg></span>
+        <h3 class="h4" style="margin-bottom:6px;">Dignity</h3><p class="small body">Respect, never pity. You're the hero; we're the guide.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge" style="margin-bottom:14px;"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15 20a5 5 0 016-4"/></svg></span>
+        <h3 class="h4" style="margin-bottom:6px;">Family</h3><p class="small body">Because a smile you can fix changes more than teeth.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge" style="margin-bottom:14px;"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M7 18a5 5 0 0110 0"/><path d="M12 3v3M4.8 9.3l1.6 1.6M19.2 9.3l-1.6 1.6"/></svg></span>
+        <h3 class="h4" style="margin-bottom:6px;">Hope</h3><p class="small body">A real next step, today, for people who'd run out of them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--violet">
+  <div class="container container--narrow center reveal">
+    <h2 class="h1" style="color:#fff;">Let's take the first step <span class="em" style="color:#fff;">together</span>.</h2>
+    <p class="lead" style="margin-top:16px;color:rgba(255,255,255,.88);">Free, low-risk, and entirely up to you where it goes from there.</p>
+    <div class="pill-row" style="justify-content:center;margin-top:28px;">
+      <a href="/eligibility" class="btn btn--white btn--lg">Check your eligibility</a>
+      <a href="/book" class="btn btn--ghost btn--lg">Join Waitlist</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="https://assets.cdn.filesafe.space/p2dIZOM82vMDqT0ka5Tj/media/688c1a341fcebd6e78757872.png" alt="Super Smiles" style="height:40px;margin-bottom:16px;">
+        <p style="max-width:34ch;">Helping everyday Australians access their super for urgent dental treatment through the program — and the dignity of a smile they're proud of.</p>
+        <div class="social-row" style="margin-top:20px;">
+          <a href="https://www.facebook.com/profile.php?id=61578878090029" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 00-2 2v12"/><path d="M8 13h6"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></a>
+          <a href="https://www.instagram.com/supersmiles.au/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.tiktok.com/@supersmiles.au" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ico" viewBox="0 0 24 24"><path d="M10 8v8a3 3 0 11-3-3"/><path d="M14 4c0 3 2 5 5 5"/><path d="M14 4v12"/></svg></a>
+          <a href="https://www.linkedin.com/in/super-smiles-287689376/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/about">About</a><br>
+        <a href="/how-it-works">How It Works</a><br>
+        <a href="/eligibility">Eligibility</a>
+        </div>
+      <div>
+        <h4>Get started</h4>
+        <a href="/faq">FAQ</a><br>
+        <a href="/contact">Contact</a><br>
+        <a href="/book">Book a free call</a><br>
+        <a href="/eligibility">Check eligibility</a>
+      </div>
+      <div>
+        <h4>The program</h4>
+        <a href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/access-on-compassionate-grounds" target="_blank" rel="noopener">ATO: Compassionate release of super <svg class="ico" viewBox="0 0 24 24" style="width:.85em;height:.85em;margin-left:1px;display:inline-block;vertical-align:-1px;"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+    <p class="disclaimer" style="margin-top:40px;max-width:80ch;">
+      Super Smiles is a trading name of MEROITI, TUMAI (ABN 75 527 278 804). We help everyday Australians prepare and organise an application for the early release of super on compassionate grounds — the Australian Taxation Office (ATO) program — for dental treatment. We are not financial advisers, not the ATO, and not a tax or legal adviser; nothing on this site is financial, tax or legal advice. Eligibility and approval are decided solely by the ATO and your super fund — we cannot and do not guarantee any outcome. Accessing super early is taxed, reduces your retirement savings, and is intended as a last resort. Please consider your own circumstances and seek independent advice.
+    </p>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Super Smiles · supersmiles.au</span>
+      <div class="footer-legal">
+        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/cookie-policy">Cookie Policy</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+      <span>Your super. Your smile. Our support.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="/eligibility" class="btn btn--outline">Check eligibility</a>
+  <a href="/book" class="btn btn--violet">Join Waitlist</a>
+</div>
+<script>(function(){var c=document.querySelector('[data-desk-cta]');function s(){c.style.display=window.innerWidth>=980?'inline-flex':'none';}s();window.addEventListener('resize',s);})();</script>
+</div>
