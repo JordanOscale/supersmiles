@@ -644,9 +644,11 @@ img{max-width:100%;}
   color:var(--white);
 }
 
-/* Exactly one message ever renders. */
-[data-bookings="closed"] .announce [data-when="open"],
-[data-bookings="open"]   .announce [data-when="closed"]{display:none;}
+/* Exactly one message ever renders. Sitewide, not just in the ticker:
+   every /book button carries both labels ("Join Waitlist" / "Book …")
+   and the same switch picks one, so opening the gate needs no re-paste. */
+[data-bookings="closed"] [data-when="open"],
+[data-bookings="open"]   [data-when="closed"]{display:none;}
 
 @media(min-width:720px){
   .announce__inner{padding-inline:24px;}                     /* px-6 */

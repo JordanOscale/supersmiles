@@ -16,6 +16,12 @@
 -->
 
 <div class="ss-root">
+<!-- This page IS the gate, so it stamps its own state before any
+     markup paints: the ticker and every CTA label read it. The other
+     pages read the site-wide switch in the head tracking code —
+     flip that to "closed" too. -->
+<script>document.documentElement.setAttribute("data-bookings","closed");</script>
+
 <!-- ============ ANNOUNCEMENT TICKER ============
      State + dismiss come from the gate script in GHL's HEAD tracking code
      (SETUP-1-head-code.html). Flip BOOKINGS_OPEN there to switch every page. -->
@@ -50,7 +56,7 @@
       <a href="/contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Join Waitlist</a>
+      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta><span data-when="closed">Join Waitlist</span><span data-when="open">Book free consultation</span></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="ico ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="ico ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -63,15 +69,11 @@
     <a href="/eligibility">Eligibility</a>
     <a href="/faq">FAQ<span class="nav-badge" title="Chat with Sierra — our 24/7 assistant"><span class="nav-badge-dot"></span>Chat</span></a>
     <a href="/contact">Contact</a>
-    <a href="/book" class="btn btn--grad btn--block">Join Waitlist</a>
+    <a href="/book" class="btn btn--grad btn--block"><span data-when="closed">Join Waitlist</span><span data-when="open">Book free consultation</span></a>
   </div>
 </header>
 
 <main>
-<!-- This page IS the gate, so it stamps its own state: the ticker
-     above reads it. The other pages read the site-wide switch in
-     the head tracking code — flip that to "closed" too. -->
-<script>document.documentElement.setAttribute("data-bookings","closed");</script>
 
 <!-- WAITLIST STATE (rendered while the gate is closed) -->
 <section class="section" id="waitlist-state" style="padding-block:56px 72px;">
@@ -165,7 +167,7 @@
 
 <div class="mobile-cta">
   <a href="/eligibility" class="btn btn--outline">Check eligibility</a>
-  <a href="/book" class="btn btn--violet">Join Waitlist</a>
+  <a href="/book" class="btn btn--violet"><span data-when="closed">Join Waitlist</span><span data-when="open">Book free call</span></a>
 </div>
 <script>(function(){var c=document.querySelector('[data-desk-cta]');function s(){c.style.display=window.innerWidth>=980?'inline-flex':'none';}s();window.addEventListener('resize',s);})();</script>
 </div>

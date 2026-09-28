@@ -14,9 +14,14 @@ Two sets are produced from the same source:
                                gate-config inlined per page (fallback if
                                site-wide tracking code isn't available)
 
-/book ships as TWO pages, because in GHL they're two separate blank pages:
-  07  closed gate  -> waitlist state  (what's live today)
-  08  open  gate   -> booking widget
+/book ships as TWO pages, because in GHL they're two separate blank pages.
+GHL won't let two pages share a path, so they live at different slugs and
+are swapped when the gate flips (see ghl-export/README.md):
+  07  closed gate  -> waitlist state  (/book while closed)
+  08  open  gate   -> booking widget  (/book-open, unpublished, until opened)
+
+CTA labels are NOT rewritten per page: every /book button carries both
+labels as data-when spans, and BOOKINGS_OPEN in the head code picks one.
 
 Run:  python3 tools/build-ghl-export.py
 """
@@ -45,7 +50,7 @@ PAGES = [
     ("05", "faq.html",                  "FAQ",                           "/faq"),
     ("06", "contact.html",              "Contact",                       "/contact"),
     ("07", "book.html",                 "Book — CLOSED gate (waitlist)", "/book"),
-    ("08", "book.html",                 "Book — OPEN gate (booking)",    "/book"),
+    ("08", "book.html",                 "Book — OPEN gate (booking)",    "/book-open"),
     ("09", "terms-and-conditions.html", "Terms & Conditions",            "/terms-and-conditions"),
     ("10", "privacy-policy.html",       "Privacy Policy",                "/privacy-policy"),
     ("11", "cookie-policy.html",        "Cookie Policy",                 "/cookie-policy"),
@@ -139,24 +144,13 @@ GATE_COMMENT_RE = re.compile(
 WAITLIST_COMMENT_RE = re.compile(
     r"<!-- WAITLIST STATE \(rendered while the gate is closed\) -->\s*")
 
-# Labels the gate-open page needs back. Exact strings from the pre-waitlist
-# build (commit 236f942 relabelled them); restored here, not invented.
-OPEN_GATE_LABELS = [
-    ('<a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Join Waitlist</a>',
-     '<a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Book free consultation</a>'),
-    ('<a href="/book" class="btn btn--grad btn--block">Join Waitlist</a>',
-     '<a href="/book" class="btn btn--grad btn--block">Book free consultation</a>'),
-    ('<a href="/book" class="btn btn--violet">Join Waitlist</a>',
-     '<a href="/book" class="btn btn--violet">Book free call</a>'),
-]
-
-
 def stamp(state):
     """Force this page's own ticker to match the gate state it renders."""
     return (
-        '\n<!-- This page IS the gate, so it stamps its own state: the ticker\n'
-        '     above reads it. The other pages read the site-wide switch in\n'
-        '     the head tracking code — flip that to "%s" too. -->\n'
+        '<!-- This page IS the gate, so it stamps its own state before any\n'
+        '     markup paints: the ticker and every CTA label read it. The other\n'
+        '     pages read the site-wide switch in the head tracking code —\n'
+        '     flip that to "%s" too. -->\n'
         '<script>document.documentElement.setAttribute("data-bookings","%s");</script>\n'
         % (state, state))
 
@@ -165,7 +159,7 @@ def book_closed(body):
     body = TEMPLATE_RE.sub("", body)
     body = GATE_SWAP_RE.sub("", body)
     body = GATE_COMMENT_RE.sub("", body)
-    return body.replace("<main>", "<main>" + stamp("closed"), 1)
+    return stamp("closed") + body
 
 
 def book_open(body):
@@ -179,9 +173,7 @@ def book_open(body):
     body = GATE_COMMENT_RE.sub("", body)
     # the waitlist is gone from this page — its heading comment must go too
     body = WAITLIST_COMMENT_RE.sub("", body)
-    for old, new in OPEN_GATE_LABELS:
-        body = body.replace(old, new)
-    return body.replace("<main>", "<main>" + stamp("open"), 1)
+    return stamp("open") + body
 
 
 # ------------------------------------------------------------------- output
@@ -220,17 +212,18 @@ def head_block(order, name, slug, doc):
   SEO title       {title_of(doc)}
   Meta description {meta(doc, name='description')}
   OG image        {absolutise(meta(doc, prop='og:image'))}
-  Canonical       {slug}
+  Canonical       {"/book" if slug.startswith("/book") else slug}
 ================================================================
 -->
 """
 
 
 def build():
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "pages").mkdir(parents=True)
-    (OUT / "pages-standalone").mkdir(parents=True)
+    # wipe generated output only — README.md is hand-written and stays
+    for d in ("pages", "pages-standalone"):
+        if (OUT / d).exists():
+            shutil.rmtree(OUT / d)
+        (OUT / d).mkdir(parents=True)
 
     css = read("assets/styles.css")
     js = read("assets/app.js")

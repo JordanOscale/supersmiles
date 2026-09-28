@@ -725,9 +725,11 @@ img{max-width:100%;}
   color:var(--white);
 }
 
-/* Exactly one message ever renders. */
-[data-bookings="closed"] .announce [data-when="open"],
-[data-bookings="open"]   .announce [data-when="closed"]{display:none;}
+/* Exactly one message ever renders. Sitewide, not just in the ticker:
+   every /book button carries both labels ("Join Waitlist" / "Book …")
+   and the same switch picks one, so opening the gate needs no re-paste. */
+[data-bookings="closed"] [data-when="open"],
+[data-bookings="open"]   [data-when="closed"]{display:none;}
 
 @media(min-width:720px){
   .announce__inner{padding-inline:24px;}                     /* px-6 */
@@ -799,7 +801,7 @@ img{max-width:100%;}
       <a href="/contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta>Join Waitlist</a>
+      <a href="/book" class="btn btn--grad" style="display:none" data-desk-cta><span data-when="closed">Join Waitlist</span><span data-when="open">Book free consultation</span></a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="ico ico-open" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="ico ico-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -812,7 +814,7 @@ img{max-width:100%;}
     <a href="/eligibility">Eligibility</a>
     <a href="/faq">FAQ<span class="nav-badge" title="Chat with Sierra — our 24/7 assistant"><span class="nav-badge-dot"></span>Chat</span></a>
     <a href="/contact">Contact</a>
-    <a href="/book" class="btn btn--grad btn--block">Join Waitlist</a>
+    <a href="/book" class="btn btn--grad btn--block"><span data-when="closed">Join Waitlist</span><span data-when="open">Book free consultation</span></a>
   </div>
 </header>
 
@@ -826,7 +828,7 @@ img{max-width:100%;}
     <p class="lead" style="margin-top:22px;max-width:54ch;margin-inline:auto;">From the first free chat to the day your funds land, here's exactly what happens — and exactly what we take off your plate.</p>
     <div class="pill-row" style="justify-content:center;margin-top:30px;">
       <a href="/eligibility" class="btn btn--violet btn--lg">Check if you're eligible</a>
-      <a href="/book" class="btn btn--outline btn--lg">Join Waitlist</a>
+      <a href="/book" class="btn btn--outline btn--lg"><span data-when="closed">Join Waitlist</span><span data-when="open">Book a free call</span></a>
     </div>
   </div>
 </section>
@@ -968,7 +970,7 @@ img{max-width:100%;}
     <p class="lead" style="margin-top:16px;color:rgba(255,255,255,.88);">It's free, it takes about 60 seconds, and it could change the next few weeks for you.</p>
     <div class="pill-row" style="justify-content:center;margin-top:28px;">
       <a href="/eligibility" class="btn btn--white btn--lg">Check your eligibility</a>
-      <a href="/book" class="btn btn--ghost btn--lg">Join Waitlist</a>
+      <a href="/book" class="btn btn--ghost btn--lg"><span data-when="closed">Join Waitlist</span><span data-when="open">Book a free call</span></a>
     </div>
   </div>
 </section>
@@ -1024,7 +1026,7 @@ img{max-width:100%;}
 
 <div class="mobile-cta">
   <a href="/eligibility" class="btn btn--outline">Check eligibility</a>
-  <a href="/book" class="btn btn--violet">Join Waitlist</a>
+  <a href="/book" class="btn btn--violet"><span data-when="closed">Join Waitlist</span><span data-when="open">Book free call</span></a>
 </div>
 <script>(function(){var c=document.querySelector('[data-desk-cta]');function s(){c.style.display=window.innerWidth>=980?'inline-flex':'none';}s();window.addEventListener('resize',s);})();</script>
 </div>

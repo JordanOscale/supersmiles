@@ -24,18 +24,21 @@ its blank GHL page.
 | 04 | Eligibility | `/eligibility` | `04-eligibility.html` |
 | 05 | FAQ | `/faq` | `05-faq.html` |
 | 06 | Contact | `/contact` | `06-contact.html` |
-| 07 | **Book — CLOSED gate (waitlist)** | `/book` | `07-book-closed-gate-waitlist.html` |
-| 08 | **Book — OPEN gate (booking)** | `/book` | `08-book-open-gate-booking.html` |
+| 07 | **Book — CLOSED gate (waitlist)** | `/book` (published) | `07-book-closed-gate-waitlist.html` |
+| 08 | **Book — OPEN gate (booking)** | `/book-open` (unpublished) | `08-book-open-gate-booking.html` |
 | 09 | Terms & Conditions | `/terms-and-conditions` | `09-terms-and-conditions.html` |
 | 10 | Privacy Policy | `/privacy-policy` | `10-privacy-policy.html` |
 | 11 | Cookie Policy | `/cookie-policy` | `11-cookie-policy.html` |
 | 12 | Disclaimer | `/disclaimer` | `12-disclaimer.html` |
 
-**07 and 08 are the same slug** — two states of one page. Only one is ever
-published. 07 (waitlist) is what's live today; 08 (booking widget) is what
-goes live when intake reopens. The slugs must match this list exactly or the
-nav and footer links break — every internal link is extensionless (`/about`,
-not `/about.html`).
+**07 and 08 are two states of `/book`, but they can't share a slug.** GHL
+won't allow two pages at the same path, and an unpublished page keeps its path
+so its redirect keeps working. So while bookings are closed, 07 sits at `/book`
+(published), and 08 sits at `/book-open` (unpublished, redirecting to `/book`
+so nobody can reach the booking widget early). The two swap when the gate
+opens — see **The booking gate** below. All other slugs must match this list
+exactly or the nav and footer links break. Every internal link is
+extensionless (`/about`, not `/about.html`).
 
 The 12 pages each carry their own nav, footer and announcement ticker, same as
 the static site. Changing the nav means re-running the build and re-pasting all
@@ -69,34 +72,62 @@ Don't mix the two sets — a standalone page plus the site-wide footer code runs
 
 ## The booking gate
 
-On the static site one line in `assets/gate-config.js` drove the ticker on all
-11 pages *and* which state `/book` rendered. Split across separate GHL pages
-that single switch is gone, so flipping the site is now **two** steps:
+The static site has one switch (`BOOKINGS_OPEN` in `assets/gate-config.js`).
+In GHL it lives in the head tracking code (`SETUP-1-head-code.html`) and drives:
 
-1. In `SETUP-1-head-code.html` (head tracking code), set
-   `var BOOKINGS_OPEN = true;` — this switches the ticker on every page from
-   "Bookings are closed / Join the waitlist / Referrals still welcome" to
-   "Bookings are open".
-2. Unpublish page **07** and publish page **08** at `/book`.
+- the announcement ticker on every page
+- **every `/book` button label on every page.** Each button carries both
+  labels (`<span data-when="closed">Join Waitlist</span><span
+  data-when="open">Book free consultation</span>`), and CSS shows the one
+  that matches the gate. **Opening or closing bookings never requires
+  rebuilding or re-pasting any page.**
 
-Each `/book` page also stamps its own gate state in its first line of script,
-so its ticker is always self-consistent even if you do step 2 before step 1.
+Pages 07 and 08 also stamp their own state at the very top of their markup,
+so `/book` is always self-consistent, whichever order you do the steps in.
+
+### One-time setup (while closed)
+
+1. Page **07** (waitlist): slug `book`, **published**.
+2. Page **08** (booking): slug `book-open`. Build it, then **Unpublish** it
+   (page ▸ Options ▸ Unpublish) with its redirect pointing at `/book`.
+3. **Test it:** visit `/book-open` and confirm it redirects, and confirm
+   `/book` still loads the waitlist.
+4. **Disable the GHL calendar** behind the booking widget as well.
+   Unpublishing page 08 doesn't stop anyone who has the direct widget link
+   (`book.supersmiles.au/widget/booking/…`) from booking.
+
+### To OPEN bookings
+
+Do this at a quiet time. Between steps 2 and 4, `/book` briefly returns a 404.
+
+1. Head tracking code: set `var BOOKINGS_OPEN = true;` and save.
+2. Rename page 07's slug from `book` to `book-closed`.
+3. Rename page 08's slug from `book-open` to `book`.
+4. Publish page 08, then unpublish page 07 (redirect → `/book`).
+5. Re-enable the GHL calendar.
+
+### To CLOSE bookings again
+
+The same steps in reverse: set `BOOKINGS_OPEN = false`, rename 08 → `book-open`,
+rename 07 → `book`, publish 07, unpublish 08 (redirect → `/book`), and disable
+the calendar.
+
+**Don't** redirect `/book` → `/book-open` as a shortcut. GHL redirects are
+permanent (SEO-style). Browsers cache them, so switching back later can trap
+returning visitors in a redirect loop.
 
 ### CTA labels
 
-Every `/book` button currently reads **"Join Waitlist"**. Page 08 already has
-the booking-era labels restored ("Book free consultation" in the nav,
-"Book free call" in the sticky bar). The other 11 pages still say
-"Join Waitlist" — when you open the gate, find/replace across `pages/`:
+The labels are the exact pre-waitlist strings (commit `236f942`), not new copy:
 
-| Find | Replace |
-|---|---|
-| `Join Waitlist` (nav desktop + mobile menu) | `Book free consultation` |
-| `Join Waitlist` (in-page CTA sections) | `Book your free consultation` |
-| `Join Waitlist` (bottom CTA bands) | `Book a free call` |
+| Button | Closed | Open |
+|---|---|---|
+| Nav (desktop + mobile menu) | Join Waitlist | Book free consultation |
+| In-page CTA sections | Join Waitlist | Book your free consultation |
+| Bottom CTA bands | Join Waitlist | Book a free call |
+| Sticky mobile bar | Join Waitlist | Book free call |
 
-Those are the exact strings from before the waitlist relabel (commit
-`236f942`), not new copy.
+The 11 plain-text footer links read "Book a free call" in both states.
 
 ---
 
